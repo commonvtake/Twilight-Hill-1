@@ -1,64 +1,30 @@
-# Dusklight Mod Template
+# Silent Hill Core
 
-A standalone template for [Dusklight](https://github.com/TwilitRealm/dusklight) mods.
+Gameplay layer for the Silent Hill / Twilight Princess crossover, built for **Dusklight v2.0.3**.
 
-See the [Dusklight modding documentation](https://github.com/TwilitRealm/dusklight/blob/main/docs/modding.md)
-for the full mod API: services, hooking game functions, asset overlays, and more.
+## Features
 
-## Quick start
+| Feature | How to use |
+|---|---|
+| **Settings from the pause screen** | Press **Start**, pick **Options**. Dusklight's menu opens: the **Settings** tab has display (fullscreen, VSync, resolution scale, frame rate, interpolation), graphics, audio and controls. Close it (B / Esc) to return to the pause screen. |
+| **Jump button** | **Left bumper (LB)** on an Xbox controller, or **Space** on keyboard. Uses Link's own jump animation. Works standing, walking, running and while Z-targeting. |
+| **Combat moves** | Link starts with the Ordon Sword and Hylian Shield in the Silent Hill areas, so the native moves work: **roll** (A while running), **side hop / backflip** (hold Z-target, A + left/right/back), **jump attack** (Z-target an enemy, A). |
 
-1. Click "Use this template" to create a new repository for your mod.
-2. Edit `mod.json.in`: set your mod's `id` (reverse-DNS style, e.g. `com.example.my_mod`),
-   `name`, `author`, and `description`.
-3. Rename the target in `CMakeLists.txt` (`add_mod(my_mod ...)`) (this names the `.dusk` file).
-4. Write your mod in `src/mod.cpp`.
-5. Build locally:
-   ```sh
-   cmake -B build
-   cmake --build build
-   ```
+The **Silent Hill** tab in the Dusklight menu (View/Back button or F1) lets you switch the jump to
+a stick click, turn off keyboard Space, restore the original Twilight Princess options page, or
+disable the starter gear.
 
-The result is `build/mods/<name>.dusk`. Copy it into the game's mods folder to try it:
+## Install
 
-- Windows: `%APPDATA%\TwilitRealm\Dusklight\mods`
-- Linux: `~/.local/share/TwilitRealm/Dusklight/mods`
-- macOS: `~/Library/Application Support/TwilitRealm/Dusklight/mods`
+1. Download the build: **Actions** tab → newest green run → artifact **mod-combined** (or **mod-windows-amd64**).
+2. Unzip it and copy `silent_hill_core.dusk` into the `mods` folder of your Silent Hill test package
+   (next to `SilentHillTown.dusk`), or `%APPDATA%\TwilitRealm\Dusklight\mods` for normal play.
 
-During development, rebuild, copy and click **Reload** in the in-game mod manager to pick up changes.
-
-> [!IMPORTANT]
-> A mod built locally will only be valid for your own platform, and shouldn't be distributed.
-> The repository will build a [cross-platform bundle](#github-actions) for distribution. See below.
-
-## Updating to a new Dusklight version
-
-Change the `DUSKLIGHT_VERSION` line in `CMakeLists.txt` to the new release tag (or commit hash) and reconfigure. The
-pinned version is fetched into `dusklight/` automatically. Use the `dusklight/` checkout to browse game code, headers
-and mod services.
-
-> [!IMPORTANT]
-> The Dusklight checkout is for **reference only**. Mods use
-> [services](https://github.com/TwilitRealm/dusklight/blob/main/docs/modding.md#built-in-services) and
-> [hooks](https://github.com/TwilitRealm/dusklight/blob/main/docs/modding.md#hooking-game-functions) to interact with
-> game code.
-
-## GitHub Actions
-
-The included GitHub Actions workflow builds the mod for the following platforms:
-- Windows (AMD64 & ARM64)
-- macOS (Apple Silicon & Intel)
-- iOS (Apple Silicon)
-- Linux (x86_64 & aarch64)
-- Android (aarch64)
-
-It then merges the per-platform builds into a single `.dusk` supporting all platforms. (Artifact `mod-combined`) 
-
-Pushing a tag to the repository creates a GitHub release with the combined bundle.
-
-## For Dusklight developers
-
-Point the build at an existing checkout instead of fetching one:
+## Build locally
 
 ```sh
-cmake -B build -DDUSKLIGHT_DIR=~/path/to/dusklight
+cmake -B build
+cmake --build build
 ```
+
+GitHub Actions builds Windows, Linux, macOS and Android on every push.

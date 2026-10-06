@@ -1,7 +1,7 @@
 {
-  "id": "com.example.my_mod",
-  "name": "My Mod",
+  "id": "local.silent_hill.core",
+  "name": "Silent Hill Core",
   "version": "@PROJECT_VERSION@",
-  "author": "You",
-  "description": "An example Dusklight mod"
+  "author": "commonvtake",
+  "description": "Gameplay layer for the Silent Hill / Twilight Princess crossover: pause-screen Options opens Dusklight settings, a dedicated jump button, and starter sword and shield in the Silent Hill areas."
 }
