@@ -5,8 +5,13 @@
 //    the original GameCube options page. Closing that menu returns to the pause screen.
 // 2. Jump button: a dedicated jump (default: left bumper / LB, keyboard Space) that uses Link's
 //    native Twilight Princess jump animation and physics (procAutoJumpInit).
-// 3. Starter gear: inside the Silent Hill stages Link starts with the Ordon Sword and Hylian
-//    Shield so the native combat moves (roll, side hop, backflip, jump attack) are available.
+// 3. Starter kit: inside the Silent Hill stages Link starts with the Ordon Sword and Hylian
+//    Shield (native combat moves), plus Harry's starting gear mapped to TP items: Lantern =
+//    flashlight (X), Hero's Bow = handgun (Y), two Red Potions = health drinks, 5 hearts.
+// 4. Dodge roll: RB (GameCube Z, unused while Midna is not riding) rolls in the stick direction,
+//    or forward when the stick is idle, using Link's native front roll.
+// 5. Enemies: Stalhounds (stand-ins for Silent Hill's Groaners) normally only rise at night;
+//    in the Silent Hill stages their update sees midnight so they appear in the fog.
 //
 // All behaviour is grounded in Dusklight v2.0.3 / zeldaret tp sources:
 //   src/d/d_menu_window.cpp   dMw_c::collect_option_*  (pause -> options state machine)
@@ -22,11 +27,14 @@
 #include "JSystem/JUtility/JUTGamePad.h"
 #include "d/actor/d_a_alink.h"
 #include "d/d_com_inf_game.h"
+#include "d/d_item.h"
 #include "d/d_item_data.h"
+#include "d/d_kankyo.h"
 #include "d/d_menu_window.h"
 #include "d/d_save.h"
 #include "dolphin/pad.h"
 
+#include <cmath>
 #include <cstdint>
 #include <cstring>
 
@@ -40,6 +48,8 @@ IMPORT_SERVICE(UiService, svc_ui);
 DEFINE_HOOK(&dMw_c::collect_option_open_proc, OptionOpenProc);
 DEFINE_HOOK(&daAlink_c::checkNextAction, LinkCheckNextAction);
 DEFINE_HOOK(&daAlink_c::create, LinkCreate);
+DEFINE_HOOK_SYMBOL("daE_SH_Execute", int(void*), StalhoundExecute);
+DEFINE_HOOK_SYMBOL("daE_SH_Draw", int(void*), StalhoundDraw);
 
 namespace {
 
@@ -61,6 +71,9 @@ ConfigVarHandle g_cvarJumpEnabled = 0;
 ConfigVarHandle g_cvarJumpButton = 0;
 ConfigVarHandle g_cvarJumpKeyboard = 0;
 ConfigVarHandle g_cvarStarterGear = 0;
+ConfigVarHandle g_cvarJumpHeight = 0;
+ConfigVarHandle g_cvarRollEnabled = 0;
+ConfigVarHandle g_cvarNightEnemies = 0;
 
 const char* const kPauseOptions[] = {"Dusklight settings (display, audio, controls)",
                                      "Original Twilight Princess options"};
@@ -260,7 +273,7 @@ void poll_jump_button() {
     g_jumpHeldLastUpdate = held;
 }
 
-bool link_can_jump(daAlink_c* link) {
+bool link_on_ground_and_free(daAlink_c* link) {
     switch (link->mProcID) {
     case daAlink_c::PROC_WAIT:
     case daAlink_c::PROC_MOVE:
@@ -280,18 +293,61 @@ bool link_can_jump(daAlink_c* link) {
     return true;
 }
 
-HookAction on_check_next_action(ModContext*, void* args, void* retval, void*) {
-    if (g_jumpQueuedUpdates <= 0) {
-        return HOOK_CONTINUE;
-    }
-    daAlink_c* link = mods::arg<daAlink_c*>(args, 0);
-    if (link == nullptr || !link_can_jump(link)) {
-        return HOOK_CONTINUE;
-    }
-    g_jumpQueuedUpdates = 0;
+bool in_silent_hill_stage() {
+    const char* stage = dComIfGp_getStartStageName();
+    return stage != nullptr && (std::strcmp(stage, "R_SP108") == 0 || std::strcmp(stage, "R_SP109") == 0);
+}
+
+// Twilight Princess's auto jump is tuned for leaping off ledges: daAlinkHIO_autoJump_c0 sets
+// mAlwaysMaxSpeedJump, so every jump lunges forward at full speed with a low arc. A button jump
+// instead keeps Link's current ground speed (0 when standing = straight up) and uses a fixed
+// take-off velocity for the chosen apex height under the auto-jump gravity (-3.4 cm/frame^2).
+int do_button_jump(daAlink_c* link) {
+    const f32 groundSpeed = link->checkInputOnR() ? link->speedF : 0.0f;
     const int result = link->procAutoJumpInit(0);
     if (result == 0) {
-        return HOOK_CONTINUE;  // the game refused the jump; run normal action selection
+        return 0;
+    }
+    const f32 gravity = 3.4f;
+    const f32 height = static_cast<f32>(get_int(g_cvarJumpHeight, 90));
+    const f32 clamped = height < 30.0f ? 30.0f : (height > 250.0f ? 250.0f : height);
+    link->speed.y = std::sqrt(2.0f * gravity * clamped);
+    link->speedF = groundSpeed;
+    link->mNormalSpeed = groundSpeed;
+    mods::log::debug("jump: proc {} speedF {:.1f} vy {:.1f}", static_cast<int>(link->mProcID), groundSpeed, link->speed.y);
+    return result;
+}
+
+// Dodge roll on RB (GameCube Z). Faces the stick direction first, so it works while standing
+// still and while Z-targeting (the native A-button roll needs Link to be running).
+int do_dodge_roll(daAlink_c* link) {
+    if (link->checkInputOnR()) {
+        link->shape_angle.y = link->mMoveAngle;
+        link->current.angle.y = link->mMoveAngle;
+    }
+    const int result = link->procFrontRollInit();
+    if (result != 0) {
+        mods::log::debug("dodge roll: angle {}", static_cast<int>(link->shape_angle.y));
+    }
+    return result;
+}
+
+HookAction on_check_next_action(ModContext*, void* args, void* retval, void*) {
+    daAlink_c* link = mods::arg<daAlink_c*>(args, 0);
+    if (link == nullptr) {
+        return HOOK_CONTINUE;
+    }
+    int result = 0;
+    if (g_jumpQueuedUpdates > 0 && link_on_ground_and_free(link)) {
+        g_jumpQueuedUpdates = 0;
+        result = do_button_jump(link);
+    } else if ((link->mItemTrigger & daAlink_c::BTN_Z) && get_bool(g_cvarRollEnabled, true) &&
+               in_silent_hill_stage() && !link->checkMidnaRide() && link_on_ground_and_free(link))
+    {
+        result = do_dodge_roll(link);
+    }
+    if (result == 0) {
+        return HOOK_CONTINUE;  // nothing taken (or the game refused); normal action selection
     }
     if (retval != nullptr) {
         *static_cast<int*>(retval) = result;
@@ -299,31 +355,71 @@ HookAction on_check_next_action(ModContext*, void* args, void* retval, void*) {
     return HOOK_SKIP_ORIGINAL;
 }
 
-// ---------------------------------------------------------------- 3. starter gear
-
-bool in_silent_hill_stage() {
-    const char* stage = dComIfGp_getStartStageName();
-    return stage != nullptr && (std::strcmp(stage, "R_SP108") == 0 || std::strcmp(stage, "R_SP109") == 0);
-}
+// ---------------------------------------------------------------- 3. starter kit
 
 HookAction on_link_create(ModContext*, void*, void*, void*) {
     if (!get_bool(g_cvarStarterGear, true) || !in_silent_hill_stage()) {
         return HOOK_CONTINUE;
     }
-    // Equipment is read while Link's models load, so apply it before the original create runs.
+    // Equipment and items are read while Link and the HUD load, so apply them before create runs.
     if (dComIfGs_getSelectEquipSword() == dItemNo_NONE_e) {
         dComIfGs_setCollectSword(COLLECT_ORDON_SWORD);
         dComIfGs_setSelectEquipSword(dItemNo_SWORD_e);
         dComIfGs_onItemFirstBit(dItemNo_SWORD_e);
-        mods::log::info("starter gear: Ordon Sword equipped");
+        mods::log::info("starter kit: Ordon Sword");
     }
     if (dComIfGs_getSelectEquipShield() == dItemNo_NONE_e) {
         dComIfGs_setCollectShield(COLLECT_HYLIAN_SHIELD);
         dComIfGs_setSelectEquipShield(dItemNo_HYLIA_SHIELD_e);
         dComIfGs_onItemFirstBit(dItemNo_HYLIA_SHIELD_e);
-        mods::log::info("starter gear: Hylian Shield equipped");
+        mods::log::info("starter kit: Hylian Shield");
+    }
+    if (!dComIfGs_isItemFirstBit(dItemNo_KANTERA_e)) {
+        // Harry's flashlight -> Lantern (full oil), handgun -> Hero's Bow (30 arrows),
+        // health drinks -> two Red Potions. Same calls the game makes when receiving them.
+        item_func_KANTERA();
+        dComIfGs_onItemFirstBit(dItemNo_KANTERA_e);
+        item_func_BOW();
+        dComIfGs_onItemFirstBit(dItemNo_BOW_e);
+        for (int i = 0; i < 2; ++i) {
+            item_func_EMPTY_BOTTLE();
+            item_func_RED_BOTTLE();
+        }
+        dComIfGs_onItemFirstBit(dItemNo_EMPTY_BOTTLE_e);
+        dComIfGs_setSelectItemIndex(SELECT_ITEM_X, SLOT_1);  // Lantern on X
+        dComIfGs_setSelectItemIndex(SELECT_ITEM_Y, SLOT_4);  // Bow on Y
+        mods::log::info("starter kit: Lantern (X), Hero's Bow (Y), 2 Red Potions");
+    }
+    if (dComIfGs_getMaxLife() < 25) {
+        dComIfGs_setMaxLife(25);  // 5 hearts (5 units per heart)
+        dComIfGs_setLife(dComIfGs_getMaxLifeGauge());
+        mods::log::info("starter kit: 5 hearts");
     }
     return HOOK_CONTINUE;
+}
+
+// ---------------------------------------------------------------- 5. night-only enemies
+
+// d_a_e_sh.cpp reads g_env_light.daytime every update and only lets Stalhounds rise between
+// 19:00 and 04:59. Present midnight to their update/draw in the Silent Hill stages only, then
+// restore the real time so lighting, sky and everything else are untouched.
+f32 g_savedDaytime = 0.0f;
+bool g_daytimeOverridden = false;
+
+HookAction stalhound_pre(ModContext*, void*, void*, void*) {
+    if (get_bool(g_cvarNightEnemies, true) && in_silent_hill_stage()) {
+        g_savedDaytime = g_env_light.daytime;
+        g_env_light.daytime = 0.0f;  // 00:00
+        g_daytimeOverridden = true;
+    }
+    return HOOK_CONTINUE;
+}
+
+void stalhound_post(ModContext*, void*, void*, void*) {
+    if (g_daytimeOverridden) {
+        g_env_light.daytime = g_savedDaytime;
+        g_daytimeOverridden = false;
+    }
 }
 
 // ---------------------------------------------------------------- options window
@@ -376,10 +472,39 @@ ModResult build_options_tab(
     add_control(left, c);
 
     c = UI_CONTROL_DESC_INIT;
+    c.kind = UI_CONTROL_NUMBER;
+    c.label = "Jump height";
+    c.help_rml = "Peak height of the jump in centimetres (Link is about 140 cm tall).";
+    c.binding = UI_BINDING_CONFIG_VAR;
+    c.config_var = g_cvarJumpHeight;
+    c.min = 30;
+    c.max = 250;
+    c.step = 10;
+    c.suffix = " cm";
+    add_control(left, c);
+
+    c = UI_CONTROL_DESC_INIT;
     c.kind = UI_CONTROL_TOGGLE;
-    c.label = "Starter sword and shield";
-    c.help_rml = "In the Silent Hill areas, Link starts with the Ordon Sword and Hylian Shield "
-                 "so side hops, backflips and jump attacks work. Applies when an area loads.";
+    c.label = "Dodge roll on RB";
+    c.help_rml = "In the Silent Hill areas, RB (GameCube Z) rolls in the direction of the stick, "
+                 "even while standing still or Z-targeting.";
+    c.binding = UI_BINDING_CONFIG_VAR;
+    c.config_var = g_cvarRollEnabled;
+    add_control(left, c);
+
+    c = UI_CONTROL_DESC_INIT;
+    c.kind = UI_CONTROL_TOGGLE;
+    c.label = "Stalhounds rise in the fog";
+    c.help_rml = "Stalhounds (standing in for Groaners) normally only appear at night.";
+    c.binding = UI_BINDING_CONFIG_VAR;
+    c.config_var = g_cvarNightEnemies;
+    add_control(left, c);
+
+    c = UI_CONTROL_DESC_INIT;
+    c.kind = UI_CONTROL_TOGGLE;
+    c.label = "Starter kit";
+    c.help_rml = "In the Silent Hill areas, Link starts with the Ordon Sword, Hylian Shield, Lantern (X), "
+                 "Hero's Bow (Y), two Red Potions and five hearts. Applies when an area loads.";
     c.binding = UI_BINDING_CONFIG_VAR;
     c.config_var = g_cvarStarterGear;
     add_control(left, c);
@@ -425,7 +550,10 @@ MOD_EXPORT ModResult mod_initialize(ModError* error) {
         (r = register_bool("jumpEnabled", true, g_cvarJumpEnabled, error)) != MOD_OK ||
         (r = register_int("jumpButton", JUMP_LEFT_BUMPER, g_cvarJumpButton, error)) != MOD_OK ||
         (r = register_bool("jumpKeyboard", true, g_cvarJumpKeyboard, error)) != MOD_OK ||
-        (r = register_bool("starterGear", true, g_cvarStarterGear, error)) != MOD_OK)
+        (r = register_bool("starterGear", true, g_cvarStarterGear, error)) != MOD_OK ||
+        (r = register_int("jumpHeight", 90, g_cvarJumpHeight, error)) != MOD_OK ||
+        (r = register_bool("rollEnabled", true, g_cvarRollEnabled, error)) != MOD_OK ||
+        (r = register_bool("nightEnemies", true, g_cvarNightEnemies, error)) != MOD_OK)
     {
         return r;
     }
@@ -449,6 +577,15 @@ MOD_EXPORT ModResult mod_initialize(ModError* error) {
         return mods::set_error(error, r, "failed to hook Link's creation");
     }
 
+    // Optional: if a future Dusklight renames these statics, the mod still loads.
+    if (mods::hook::add_pre<StalhoundExecute>(stalhound_pre) != MOD_OK ||
+        mods::hook::add_post<StalhoundExecute>(stalhound_post) != MOD_OK ||
+        mods::hook::add_pre<StalhoundDraw>(stalhound_pre) != MOD_OK ||
+        mods::hook::add_post<StalhoundDraw>(stalhound_post) != MOD_OK)
+    {
+        mods::log::warn("Stalhound night hooks unavailable; they will only appear at night");
+    }
+
     UiModsPanelDesc panel = UI_MODS_PANEL_DESC_INIT;
     panel.build = build_panel;
     svc_ui->register_mods_panel(mod_ctx, &panel);
@@ -458,7 +595,7 @@ MOD_EXPORT ModResult mod_initialize(ModError* error) {
     tab.on_selected = open_options_window;
     svc_ui->register_menu_tab(mod_ctx, &tab, &g_menuTab);
 
-    mods::log::info("Silent Hill Core initialized");
+    mods::log::info("Silent Hill Core 0.7.0 initialized (menu {}, LB {}, keyboard {})", host_menu_available() ? "ok" : "unavailable", g_sdlGetGamepadButton ? "ok" : "fallback", g_sdlGetKeyboardState ? "ok" : "unavailable");
     return MOD_OK;
 }
 
