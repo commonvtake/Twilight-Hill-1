@@ -10,7 +10,7 @@ Gameplay layer for the Silent Hill / Twilight Princess crossover, built for **Du
 | **Jump button** | **Left bumper (LB)** on an Xbox controller, or **Space** on keyboard. Uses Link's own jump animation with a fixed height (default 90 cm, adjustable); standing jumps go straight up, running jumps keep Link's speed. |
 | **Dodge roll** | **RB** rolls in the stick direction (forward if the stick is idle), even standing still or while Z-targeting. A while running still does the normal roll. |
 | **Combat moves** | Sword (X), **side hop / backflip** (hold lock-on, A + left/right/back), **jump attack** (lock onto an enemy, A), shield (hold right trigger). |
-| **Starter kit** | In the Silent Hill areas Link carries the Ordon Sword, Hylian Shield, **Lantern** (flashlight, on X), **Hero's Bow** (handgun, on Y, 30 arrows), two **Red Potions** (health drinks) and five hearts. |
+| **Starter kit** | In the Silent Hill areas Link carries the Ordon Sword, Hylian Shield, **Lantern** (flashlight, GameCube X = Xbox **B**), **Hero's Bow** (handgun, Y, 30 arrows), two **Red Potions** (health drinks) and five hearts. |
 | **Enemies** | Stalhounds (Groaners) rise from the ground in the fog; they normally only appear at night. |
 
 The **Silent Hill** tab in the Dusklight menu (View/Back button or F1) lets you switch the jump to

@@ -293,9 +293,15 @@ bool link_on_ground_and_free(daAlink_c* link) {
     return true;
 }
 
+// Stages that hold Silent Hill content: R_SP108 = Cafe 5to2, R_SP109 = 0.6 central district,
+// D_SB01 = Old Silent Hill town (one 3 x 3 tile block per room, 0.7+).
 bool in_silent_hill_stage() {
     const char* stage = dComIfGp_getStartStageName();
-    return stage != nullptr && (std::strcmp(stage, "R_SP108") == 0 || std::strcmp(stage, "R_SP109") == 0);
+    if (stage == nullptr) {
+        return false;
+    }
+    return std::strcmp(stage, "R_SP108") == 0 || std::strcmp(stage, "R_SP109") == 0 ||
+           std::strcmp(stage, "D_SB01") == 0;
 }
 
 // Twilight Princess's auto jump is tuned for leaping off ledges: daAlinkHIO_autoJump_c0 sets
