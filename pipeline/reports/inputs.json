@@ -1,0 +1,12 @@
+{
+  "twilight_princess": {
+    "file": "main.dol",
+    "sha1": "4997d93b9692620c40e90374a0f1dbf0e4889395",
+    "sha256": "e7f197436815e66c4a11df3d7bd557d66083b641ff8a8e76439f3caba7ae60e8"
+  },
+  "silent_hill": {
+    "file": "SLUS_007.07",
+    "sha1": "f38344565fb731befc52fd968eb5a667be37acf3",
+    "sha256": "e73859ccd2e8000d259c6fe640bb8a6d55fed6044f67fbf071e3d86c0f202398"
+  }
+}

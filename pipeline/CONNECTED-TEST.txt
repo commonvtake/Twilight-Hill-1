@@ -1,0 +1,50 @@
+SILENT HILL / TWILIGHT PRINCESS - CONNECTED TEST 0.3.1
+
+INSTALL
+Close the game. Extract this ZIP and copy the CONTENTS of
+SilentHill-TwilightPrincess-Test into your existing working test folder.
+Allow replacement of included files. Keep Runtime and Selected-Game.txt.
+Double-click Launch-Connected.cmd (Windows Batch File).
+If extensions are hidden, its displayed name is Launch-Connected.
+
+TRY THE ROUND TRIP
+1. You start inside the cafe. Find the added wooden Zelda door on the window
+   side of the room, between the seating sections.
+2. Walk close, face the door, and press the action button when Open appears.
+3. After the fade, Link should arrive on the street pavement near its door.
+4. Turn around, approach the wooden door, and press Open to return to the cafe.
+5. Repeat the trip once and check walking and camera control on both sides.
+
+This is a connected test build. Both exits, arrival positions, required door
+model, and collision data have been checked in the package. Actual door
+animation and both transitions still need your Windows playtest.
+
+The first connection uses Zelda's wooden door model and opening animation.
+The exterior door sits on the pavement at the test entrance. The Silent Hill
+facade and door appearance are not yet a polished matching pair.
+The street remains a bounded test block. There are no new enemy encounters.
+
+Launch-Connected loads BOTH areas in one mod and uses ConnectedTestData.
+The previous Launch-Cafe and Launch-Outdoor files still run isolated tests;
+they do not include the connected doors. Use Launch-Connected for transitions.
+
+IF SOMETHING FAILS
+Run Open-Connected-Logs.cmd and send the newest log plus a screenshot.
+Say whether the failure is before Open appears, during the fade, outside,
+or when returning inside. If useful, try Launch-Connected-D3D11.cmd.
+
+DOOR FALL PATCH 0.3.1
+The supplied 0.3.0 log shows the cafe and door loading but no subsequent
+outdoor room load. It does not establish the exact failing animation step.
+This update adds a native scnChg exit volume behind each closed door, supported
+collision underneath the crossing, and identical stage-level/room-level exits.
+The room-level route is normal; the stage-level route also supports the native
+engine's room=-1 case during transitions. Original map collision is retained.
+
+After copying the update, the launcher should say Connected test 0.3.1.
+Use Launch-Connected.cmd, open the cafe door and walk through; then return.
+The new exit trigger should only activate behind the closed door, not at the
+approach or arrival position. Model, data and crossing geometry checks pass.
+This patch has NOT yet been playtested in the Windows runtime.
+If the fall persists, send the newest log from Open-Connected-Logs.cmd and
+say whether the door opens, whether a fade appears, and which direction fails.

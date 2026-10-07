@@ -1,0 +1,32 @@
+{
+  "version": "0.7.0",
+  "textures": {
+    "count": 16,
+    "format": "C8/RGB5A3",
+    "max_visible_difference_vs_rgb5a3": 0,
+    "cutout_mask": "identical"
+  },
+  "collision": {
+    "faces": 34154,
+    "groups": 1,
+    "bytes": 784320
+  },
+  "spawn_floor_cm": [
+    0.0,
+    14.843799999999998
+  ],
+  "coverage": {
+    "grid_cm": 25.0,
+    "cells": 231361,
+    "floor_cells": 126680,
+    "reachable_cells": 118059,
+    "reachable_m2": 7378.6875,
+    "open_drop_edges": 0
+  },
+  "enemies": {
+    "stalhounds": 6,
+    "guays": 4,
+    "door_actor_preserved": true,
+    "other_room_records_identical": true
+  }
+}

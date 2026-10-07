@@ -1,0 +1,6 @@
+{
+  "color_rgb": [153, 159, 156],
+  "start_cm": 500.0,
+  "end_cm": 1800.0,
+  "note": "Build-time settings. Run tools/package_fog.py after changes; native renderer applies fog at runtime."
+}

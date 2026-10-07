@@ -1,0 +1,58 @@
+SILENT HILL / TWILIGHT PRINCESS - 0.7.0 OLD SILENT HILL
+
+This is not the complete Silent Hill campaign (about 20% of the full game is built).
+
+WHAT'S NEW
+- The whole of Old Silent Hill: 115 original town tiles in 17 areas.
+  Walk off the end of a street to move into the next area (short fade, like
+  Hyrule Field). 12 areas connect to the starting street (about 51,000 m2).
+  The west side (5 areas) lies across one of Silent Hill's collapsed-road
+  chasms; as in the original game it is reached later through the story route,
+  which is not built yet. Chasm edges have invisible walls.
+- Cafe 5to2 door works from the starting street, as in 0.6.
+- Enemies: Stalhounds rise from the ground (Silent Hill's Groaners) and Guays
+  circle in the fog and dive at you (Air Screamers). 64 in the connected town.
+  They respawn when you re-enter an area.
+- Fixes from your 0.6 test:
+    * Inventory: Link now starts with the Lantern (flashlight), Hero's Bow
+      (handgun, 30 arrows) and two Red Potions (health drinks), plus the
+      Ordon Sword, Hylian Shield and 5 hearts. The empty item screens came from
+      the test starting without a normal save.
+    * Jump: Twilight Princess's jump is tuned to always lunge forward at full
+      speed. The jump button now has a fixed height (90 cm, adjustable): straight
+      up when standing, keeps your speed when running.
+    * Dodge roll: RB rolls in the direction of the left stick, even when standing
+      still or locked on. A while running still does the normal roll.
+
+CONTROLS (Xbox controller, Dusklight default layout)
+  Move ................ left stick          Camera ...... right stick
+  Jump ................ LB                  keyboard: Space
+  Dodge roll .......... RB (any direction)  Roll ........ A while running
+  Sword ............... X                   Shield ...... hold right trigger
+  Lock on ............. left trigger
+  Side hop / backflip . hold lock-on, A + left/right/back
+  Jump attack ......... lock onto an enemy, A
+  Lantern ............. B                   Bow ......... Y
+  Items / potions ..... D-pad (item ring)
+  Pause screen ........ Start   (Options = Dusklight display/graphics settings)
+  Dusklight menu ...... View / Back   (Silent Hill tab = jump height, buttons)
+
+UPDATE AND RUN
+1. Close the game. Extract the ZIP and copy the contents of
+   SilentHill-TwilightPrincess-Test over your test folder (allow replacement).
+2. Double-click Launch-Silent-Hill.cmd. It uses your existing settings profile.
+3. If graphics initialization fails, use Launch-Silent-Hill-D3D11.cmd.
+
+TEST THIS BUILD
+- Walk the streets in every direction and cross into the neighbouring areas.
+  Note any spot where you fall, get stuck, or bounce back and forth at an edge.
+- Fight Stalhounds and Guays; try the dodge roll, side hops, backflips, the bow.
+- Open the item ring (D-pad) and drink a potion; light the Lantern.
+- Jump standing and running. Enter the cafe and come back out.
+- Watch the FPS display in the busiest areas.
+- If anything fails, close the game and run Open-Silent-Hill-Logs.cmd.
+  Send the newest log plus what happened and where you were.
+
+OTHER LAUNCHERS
+Launch-District-Only.cmd: the 0.7 single-area district with enemies (fallback).
+Launch-Town-Previous.cmd: 0.5.0 three-tile street.

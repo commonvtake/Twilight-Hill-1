@@ -1,0 +1,63 @@
+SILENT HILL / TWILIGHT PRINCESS - 0.6.0 CENTRAL DISTRICT
+
+This is an expanded area prototype, not the complete Silent Hill campaign.
+
+WHAT'S NEW
+- Nine original Old Silent Hill town tiles (a 3 x 3 grid of 40 m tiles,
+  about 120 x 120 m): two parallel streets, the back alley, both cross
+  streets and the courtyards. Previously only one street strip.
+- Same fog, cafe, cafe door and spawn point as 0.5.0.
+- Silent Hill Core mod (new):
+    * Pause screen settings: press Start, choose Options. Dusklight's menu
+      opens; its Settings tab has display (fullscreen, VSync, resolution
+      scale, frame rate, interpolation), graphics, audio and controls.
+      Close it with B / Esc to return to the pause screen.
+    * Jump button: LB (left bumper) on an Xbox controller, Space on
+      keyboard. Uses Link's own Twilight Princess jump.
+    * Sword and shield: Link starts with the Ordon Sword and Hylian Shield
+      in the Silent Hill areas, so all native combat moves work.
+    * The "Silent Hill" tab in the Dusklight menu (View/Back button or F1)
+      lets you move jump to a stick click or turn any feature off.
+
+CONTROLS (Xbox controller, Dusklight default layout)
+  Move ................ left stick
+  Roll ................ A while running
+  Jump ................ LB (new)          keyboard: Space
+  Sword ............... X (GameCube B)
+  Z-target / lock on .. left trigger
+  Side hop ............ hold lock-on, A + left/right
+  Backflip ............ hold lock-on, A + back
+  Jump attack ......... lock onto an enemy, A
+  Pause screen ........ Start   (Options = Dusklight settings)
+  Dusklight menu ...... View / Back   (keyboard F1)
+
+UPDATE AND RUN
+1. Close the game.
+2. Extract the ZIP and copy the contents of SilentHill-TwilightPrincess-Test
+   over your existing test folder. Allow replacement of package files.
+   Your Runtime, selected disc record, and existing test saves are kept.
+3. Double-click Launch-Silent-Hill.cmd. It starts on the same street as before.
+4. If graphics initialization fails, use Launch-Silent-Hill-D3D11.cmd.
+The 0.6.0 build uses a new DistrictTestData profile; the PC preset is applied once.
+
+TEST THIS BUILD
+- Walk the whole district: both streets, the alley, both cross streets and
+  the courtyard at the far corner. Report any spot where Link falls through
+  the ground, gets stuck, or walks into an empty building.
+- Press LB while standing, walking and running. Jump off a kerb.
+- Hold lock-on and try side hops and backflips; swing the sword.
+- Press Start, choose Options, change a display setting, close the menu.
+- Enter the cafe and come back out (repeat twice).
+- Watch the FPS display while turning the camera in the middle of the district.
+- If anything fails, close the game and run Open-Silent-Hill-Logs.cmd.
+  Send the newest log plus what happened and where you were.
+
+PREVIOUS BUILDS
+Launch-Town-Previous.cmd: 0.5.0 three-tile street (TownTestData, Logs\Town).
+Launch-Fog-Previous.cmd, Launch-Cafe.cmd, Launch-Outdoor.cmd, Launch-Connected.cmd:
+older isolated tests, unchanged.
+
+SOURCE
+Silent Hill Core source and automatic builds: github.com/commonvtake/silent-hill-core
+District rebuild: tools/build_district.py, tools/package_district.py,
+validation: tools/validate_district.py (see CHECKPOINT.md).

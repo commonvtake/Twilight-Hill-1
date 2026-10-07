@@ -1,0 +1,17 @@
+{
+  "video.enableFullscreen": false,
+  "video.enableVsync": true,
+  "video.maxFrameRate": 60,
+  "video.rememberWindowSize": true,
+  "video.lastWindowWidth": 1920,
+  "video.lastWindowHeight": 1080,
+  "game.enableFpsOverlay": true,
+  "game.fpsOverlayCorner": 0,
+  "game.bloomMode": 0,
+  "game.depthOfFieldMode": 0,
+  "game.enableTextureReplacements": false,
+  "game.enableFrameInterpolation": 1,
+  "game.internalResolutionScale": 0,
+  "game.shadowResolutionMultiplier": 1,
+  "backend.graphicsBackend": "auto"
+}

@@ -17,9 +17,15 @@ The **Silent Hill** tab in the Dusklight menu (View/Back button or F1) lets you 
 a stick click, turn off keyboard Space, restore the original Twilight Princess options page, or
 disable the starter gear.
 
+## Project status
+
+About 20% of the full Silent Hill × Twilight Princess conversion is built — see
+[PROGRESS.md](PROGRESS.md). The conversion pipeline, launchers and test notes live in
+[`pipeline/`](pipeline/) (code and docs only; no game data).
+
 ## Install
 
-1. Download the build: **Actions** tab → newest green run → artifact **mod-combined** (or **mod-windows-amd64**).
+1. Download `silent_hill_core.dusk` from the **latest-build** release (rebuilt on every push to `main`).
 2. Unzip it and copy `silent_hill_core.dusk` into the `mods` folder of your Silent Hill test package
    (next to `SilentHillTown.dusk`), or `%APPDATA%\TwilitRealm\Dusklight\mods` for normal play.
 

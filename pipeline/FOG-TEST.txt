@@ -1,0 +1,28 @@
+SILENT HILL / TWILIGHT PRINCESS - FOG MILESTONE 0.4.0
+
+INSTALL
+Close the game. Extract the ZIP and copy the contents of
+SilentHill-TwilightPrincess-Test into your existing working test folder.
+Replace matching files; keep Runtime and Selected-Game.txt.
+Double-click Launch-Silent-Hill.cmd (Windows Batch File).
+The launcher should show prototype 0.4.0 and open directly on the street.
+
+TEST
+The street should fade into gray-green fog over distance. Buildings nearby
+should remain visible; farther scenery should blend with the sky.
+Walk, rotate the camera, and check that Link remains readable.
+The native linear fog begins at 5 m and reaches its full color at 18 m of
+camera depth. Actual appearance needs your Windows test.
+
+Try the wooden door into the cafe, then return outside. This build includes
+the 0.3.1 door-fall patch, which still needs confirmation of a full round trip.
+The cafe's appearance, all geometry/textures, and door/collision data are
+unchanged from 0.3.1. The latest tests check these payloads byte-for-byte.
+
+If it fails, run Open-Silent-Hill-Logs.cmd and send the newest log plus a
+screenshot. The D3D11 alternative is Launch-Silent-Hill-D3D11.cmd.
+Launch-Connected.cmd remains the previous no-fog door test for comparison.
+
+SCOPE
+This is one street tile plus the cafe. The full town, story, puzzle progression,
+enemies and campaign are NOT built yet. See FULL-GAME-PLAN.md for the milestones.

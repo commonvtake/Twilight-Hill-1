@@ -1,0 +1,51 @@
+SILENT HILL / TWILIGHT PRINCESS - 0.5.0
+
+This is an expanded area prototype, not the complete Silent Hill campaign.
+It contains three adjoining original street tiles (about 120 metres long),
+native distance fog, Link's existing Twilight Princess controls, and the cafe.
+The cafe door repair from 0.3.1 is retained and still needs a Windows playtest.
+
+UPDATE AND RUN
+1. Close the game.
+2. Extract the ZIP, then copy the contents of SilentHill-TwilightPrincess-Test
+   over your existing test folder. Allow replacement of package files.
+   Your Runtime, selected disc record, and existing test saves are not in the ZIP.
+3. Double-click Launch-Silent-Hill.cmd. It starts outdoors.
+4. If graphics initialization fails, use Launch-Silent-Hill-D3D11.cmd.
+
+PC PRESET: i5-12400F / 16 GB DDR4 / RTX 3060
+The new TownTestData profile starts in a 1920x1080 window, VSync enabled,
+60 FPS capped frame interpolation, standard-resolution shadows, bloom off,
+depth of field off, and no texture replacement packs. FPS overlay is enabled.
+Frame interpolation targets smoother presentation; game simulation stays at
+its native timing. This is a starting preset, not a measured FPS guarantee.
+It does not alter your Windows settings, drivers, or GPU control panel.
+
+The preset applies once. Subsequent in-game settings changes are preserved.
+An existing TownTestData/config.json is backed up before the preset is applied.
+Close the game before using Reapply-PC-Settings.cmd to apply it again.
+
+TEST THIS BUILD
+- Walk along the road in both directions past the previous tile edges.
+  The imported strip ends at collision limits; it is not the entire town.
+- Walk to the cafe door, face it, and use the game's Open prompt.
+- Leave the cafe again. Repeat the round trip twice.
+- Check fog, camera movement, and the FPS display after initial shader loading.
+- If anything fails, close the game and run Open-Silent-Hill-Logs.cmd.
+  Send the newest log plus what happened and whether you were entering or exiting.
+
+PREVIOUS BUILDS
+Launch-Fog-Previous.cmd: previous single-tile fog build, separate settings.
+Launch-Cafe.cmd and Launch-Outdoor.cmd: original isolated area tests.
+Launch-Connected.cmd: previous no-fog connection repair test.
+Test-Normal-Zelda.cmd: base game comparison.
+
+VALIDATED HERE
+Archive parsing, collision resource dispatch, collision-tree indices, road
+floor/headroom samples across the two joins, and preserved cafe/door records.
+These checks do not prove rendering, doors, or frame rate work on your PC.
+Windows runtime and PowerShell execution have not been tested here.
+
+NOT IMPLEMENTED
+The remaining districts/interiors, SH quest progression, keys/puzzles,
+enemies/bosses, cutscenes, endings, and full-campaign save/load integration.

@@ -1,0 +1,595 @@
+{
+ "stage": "D_SB01",
+ "rooms": [
+  {
+   "room": 0,
+   "chunk": [
+    0,
+    0
+   ],
+   "tiles": [
+    "THR0000",
+    "THR0001",
+    "THR0002",
+    "THR0100",
+    "THR0101",
+    "THR0102",
+    "THRFF00",
+    "THRFF01",
+    "THRFF02"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    60.0
+   ],
+   "triangles": 35101,
+   "collision_faces": 34148,
+   "tree_nodes": 8191,
+   "drop_barriers": 99,
+   "door_support_faces": 14,
+   "model_bytes": 1601248,
+   "collision_bytes": 784416,
+   "room_bytes_estimate": 2387808,
+   "reachable_m2": 7397.6875,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 14,
+   "exits": 13,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 1,
+   "chunk": [
+    -3,
+    -2
+   ],
+   "tiles": [
+    "THRF8FB"
+   ],
+   "origin_m": [
+    340.0,
+    0.0,
+    -180.0
+   ],
+   "triangles": 1566,
+   "collision_faces": 1595,
+   "tree_nodes": 511,
+   "drop_barriers": 61,
+   "door_support_faces": 0,
+   "model_bytes": 264576,
+   "collision_bytes": 39168,
+   "room_bytes_estimate": 304576,
+   "reachable_m2": 176.3125,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "exits": 1,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 2,
+   "chunk": [
+    -2,
+    -2
+   ],
+   "tiles": [
+    "THRF9FA",
+    "THRF9FB",
+    "THRF9FC",
+    "THRFAFA",
+    "THRFAFB",
+    "THRFAFC",
+    "THRFBFA",
+    "THRFBFB",
+    "THRFBFC"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    -180.0
+   ],
+   "triangles": 40003,
+   "collision_faces": 42840,
+   "tree_nodes": 11951,
+   "drop_barriers": 854,
+   "door_support_faces": 0,
+   "model_bytes": 1761856,
+   "collision_bytes": 1018016,
+   "room_bytes_estimate": 2781184,
+   "reachable_m2": 7750.0,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 5,
+   "exits": 3,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 3,
+   "chunk": [
+    -1,
+    -2
+   ],
+   "tiles": [
+    "THRFCFA",
+    "THRFCFB",
+    "THRFCFC",
+    "THRFDFA",
+    "THRFDFB",
+    "THRFDFC",
+    "THRFEFA",
+    "THRFEFB",
+    "THRFEFC"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    -180.0
+   ],
+   "triangles": 31539,
+   "collision_faces": 30541,
+   "tree_nodes": 8191,
+   "drop_barriers": 110,
+   "door_support_faces": 0,
+   "model_bytes": 1500320,
+   "collision_bytes": 722048,
+   "room_bytes_estimate": 2223552,
+   "reachable_m2": 5696.75,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 4,
+   "exits": 2,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 4,
+   "chunk": [
+    0,
+    -2
+   ],
+   "tiles": [
+    "THRFFFA",
+    "THRFFFB"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    -180.0
+   ],
+   "triangles": 1898,
+   "collision_faces": 1803,
+   "tree_nodes": 511,
+   "drop_barriers": 11,
+   "door_support_faces": 0,
+   "model_bytes": 371552,
+   "collision_bytes": 43808,
+   "room_bytes_estimate": 416192,
+   "reachable_m2": 281.0625,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "exits": 1,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 5,
+   "chunk": [
+    1,
+    -2
+   ],
+   "tiles": [
+    "THR02FC",
+    "THR03FC"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    -180.0
+   ],
+   "triangles": 3240,
+   "collision_faces": 3453,
+   "tree_nodes": 1023,
+   "drop_barriers": 54,
+   "door_support_faces": 0,
+   "model_bytes": 429248,
+   "collision_bytes": 82688,
+   "room_bytes_estimate": 512768,
+   "reachable_m2": 396.0,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "exits": 1,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 6,
+   "chunk": [
+    -2,
+    -1
+   ],
+   "tiles": [
+    "THRF9FD",
+    "THRF9FE",
+    "THRF9FF",
+    "THRFAFD",
+    "THRFAFE",
+    "THRFAFF",
+    "THRFBFD",
+    "THRFBFE",
+    "THRFBFF"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    -60.0
+   ],
+   "triangles": 43278,
+   "collision_faces": 45196,
+   "tree_nodes": 16383,
+   "drop_barriers": 701,
+   "door_support_faces": 0,
+   "model_bytes": 1856896,
+   "collision_bytes": 1154272,
+   "room_bytes_estimate": 3012672,
+   "reachable_m2": 8484.5,
+   "stalhounds": 7,
+   "guays": 4,
+   "spawns": 7,
+   "exits": 5,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 7,
+   "chunk": [
+    -1,
+    -1
+   ],
+   "tiles": [
+    "THRFCFE",
+    "THRFCFF",
+    "THRFDFD",
+    "THRFDFE",
+    "THRFDFF",
+    "THRFEFD",
+    "THRFEFE",
+    "THRFEFF"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    -60.0
+   ],
+   "triangles": 27336,
+   "collision_faces": 27413,
+   "tree_nodes": 8191,
+   "drop_barriers": 219,
+   "door_support_faces": 0,
+   "model_bytes": 1421600,
+   "collision_bytes": 664832,
+   "room_bytes_estimate": 2087936,
+   "reachable_m2": 4648.9375,
+   "stalhounds": 4,
+   "guays": 2,
+   "spawns": 9,
+   "exits": 7,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 8,
+   "chunk": [
+    0,
+    -1
+   ],
+   "tiles": [
+    "THR00FD",
+    "THR00FE",
+    "THR00FF",
+    "THR01FD",
+    "THR01FE",
+    "THR01FF",
+    "THRFFFD",
+    "THRFFFE",
+    "THRFFFF"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    -60.0
+   ],
+   "triangles": 28596,
+   "collision_faces": 30224,
+   "tree_nodes": 8191,
+   "drop_barriers": 702,
+   "door_support_faces": 0,
+   "model_bytes": 1477856,
+   "collision_bytes": 717792,
+   "room_bytes_estimate": 2197312,
+   "reachable_m2": 5877.6875,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 10,
+   "exits": 8,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 9,
+   "chunk": [
+    1,
+    -1
+   ],
+   "tiles": [
+    "THR02FD",
+    "THR02FE",
+    "THR02FF",
+    "THR03FD",
+    "THR03FE",
+    "THR03FF",
+    "THR04FD",
+    "THR04FE"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    -60.0
+   ],
+   "triangles": 32105,
+   "collision_faces": 32129,
+   "tree_nodes": 8191,
+   "drop_barriers": 297,
+   "door_support_faces": 0,
+   "model_bytes": 1446272,
+   "collision_bytes": 755488,
+   "room_bytes_estimate": 2203264,
+   "reachable_m2": 5771.75,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 10,
+   "exits": 5,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 10,
+   "chunk": [
+    2,
+    -1
+   ],
+   "skipped": "no connection"
+  },
+  {
+   "room": 11,
+   "chunk": [
+    -2,
+    0
+   ],
+   "tiles": [
+    "THRF900",
+    "THRF901",
+    "THRF902",
+    "THRFA00",
+    "THRFA01",
+    "THRFA02",
+    "THRFB00",
+    "THRFB01",
+    "THRFB02"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    60.0
+   ],
+   "triangles": 37766,
+   "collision_faces": 37574,
+   "tree_nodes": 8191,
+   "drop_barriers": 166,
+   "door_support_faces": 0,
+   "model_bytes": 1651392,
+   "collision_bytes": 842912,
+   "room_bytes_estimate": 2495872,
+   "reachable_m2": 7017.875,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 8,
+   "exits": 6,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 12,
+   "chunk": [
+    -1,
+    0
+   ],
+   "tiles": [
+    "THRFC00",
+    "THRFC01",
+    "THRFC02",
+    "THRFD00",
+    "THRFD01",
+    "THRFD02",
+    "THRFE00",
+    "THRFE01",
+    "THRFE02"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    60.0
+   ],
+   "triangles": 39011,
+   "collision_faces": 38279,
+   "tree_nodes": 8191,
+   "drop_barriers": 115,
+   "door_support_faces": 0,
+   "model_bytes": 1673120,
+   "collision_bytes": 857056,
+   "room_bytes_estimate": 2532064,
+   "reachable_m2": 7467.8125,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 12,
+   "exits": 10,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 13,
+   "chunk": [
+    1,
+    0
+   ],
+   "tiles": [
+    "THR0200",
+    "THR0201",
+    "THR0202",
+    "THR0300",
+    "THR0301",
+    "THR0302",
+    "THR0402"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    60.0
+   ],
+   "triangles": 27713,
+   "collision_faces": 27244,
+   "tree_nodes": 8191,
+   "drop_barriers": 83,
+   "door_support_faces": 0,
+   "model_bytes": 1359008,
+   "collision_bytes": 659104,
+   "room_bytes_estimate": 2019840,
+   "reachable_m2": 5532.125,
+   "stalhounds": 4,
+   "guays": 3,
+   "spawns": 11,
+   "exits": 9,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 14,
+   "chunk": [
+    -2,
+    1
+   ],
+   "tiles": [
+    "THRF903",
+    "THRFA03",
+    "THRFB03"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    180.0
+   ],
+   "triangles": 12474,
+   "collision_faces": 12557,
+   "tree_nodes": 4095,
+   "drop_barriers": 104,
+   "door_support_faces": 0,
+   "model_bytes": 772192,
+   "collision_bytes": 312896,
+   "room_bytes_estimate": 1086176,
+   "reachable_m2": 2111.6875,
+   "stalhounds": 2,
+   "guays": 1,
+   "spawns": 5,
+   "exits": 3,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 15,
+   "chunk": [
+    -1,
+    1
+   ],
+   "tiles": [
+    "THRFC03",
+    "THRFD03",
+    "THRFE03"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    180.0
+   ],
+   "triangles": 9192,
+   "collision_faces": 9099,
+   "tree_nodes": 2047,
+   "drop_barriers": 6,
+   "door_support_faces": 0,
+   "model_bytes": 641824,
+   "collision_bytes": 204736,
+   "room_bytes_estimate": 847712,
+   "reachable_m2": 1451.25,
+   "stalhounds": 1,
+   "guays": 1,
+   "spawns": 7,
+   "exits": 5,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 16,
+   "chunk": [
+    0,
+    1
+   ],
+   "tiles": [
+    "THR0003",
+    "THR0004",
+    "THR0103",
+    "THRFF03",
+    "THRFF04"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    180.0
+   ],
+   "triangles": 19657,
+   "collision_faces": 20030,
+   "tree_nodes": 4095,
+   "drop_barriers": 275,
+   "door_support_faces": 0,
+   "model_bytes": 1007616,
+   "collision_bytes": 443776,
+   "room_bytes_estimate": 1452832,
+   "reachable_m2": 4563.8125,
+   "stalhounds": 4,
+   "guays": 2,
+   "spawns": 8,
+   "exits": 6,
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 17,
+   "chunk": [
+    1,
+    1
+   ],
+   "tiles": [
+    "THR0203",
+    "THR0303",
+    "THR0403"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    180.0
+   ],
+   "triangles": 9378,
+   "collision_faces": 9721,
+   "tree_nodes": 2047,
+   "drop_barriers": 162,
+   "door_support_faces": 0,
+   "model_bytes": 643936,
+   "collision_bytes": 217312,
+   "room_bytes_estimate": 862528,
+   "reachable_m2": 1793.1875,
+   "stalhounds": 1,
+   "guays": 1,
+   "spawns": 8,
+   "exits": 6,
+   "open_drop_edges_after": 0
+  }
+ ],
+ "portals": 96
+}

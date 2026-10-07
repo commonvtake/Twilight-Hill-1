@@ -1,0 +1,12 @@
+SILENT HILL / TWILIGHT PRINCESS - PROTOTYPE 0.7.0
+
+Read TOWN-0.7-TEST.txt. Close the game, copy this package over your existing
+test folder, and run Launch-Silent-Hill.cmd.
+
+New: all of Old Silent Hill (115 town tiles, 17 connected areas - walk across
+street edges), Stalhounds and Guays standing in for Groaners and Air Screamers,
+a real jump (LB), a dodge roll (RB), and Harry's starting gear as Zelda items:
+Lantern, Hero's Bow, Red Potions, sword, shield and 5 hearts.
+
+About 20% of the full game is built. Story, puzzles, interiors beyond the cafe,
+the Otherworld and bosses are not built yet. Windows playtest required.

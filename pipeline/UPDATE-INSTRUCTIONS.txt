@@ -1,0 +1,9 @@
+LATEST UPDATE: 0.5.0
+
+Close the game. Extract the ZIP and copy the contents of
+SilentHill-TwilightPrincess-Test over your existing test folder.
+Allow replacing package files. Do not delete your Runtime or test data.
+Launch-Silent-Hill.cmd now starts the three-tile town test with its own
+TownTestData settings. Read TOWN-TEST.txt for the PC preset and test steps.
+
+The previous fog build is available through Launch-Fog-Previous.cmd.

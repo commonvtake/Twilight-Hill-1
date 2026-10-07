@@ -1,0 +1,33 @@
+SILENT HILL / TWILIGHT PRINCESS - OUTDOOR TEST 0.2.0
+
+INSTALL INTO YOUR WORKING TEST FOLDER
+1. Close the game.
+2. Extract the downloaded ZIP.
+3. Copy the contents of SilentHill-TwilightPrincess-Test into your existing
+   working test folder. Allow replacement of the included launcher/scripts.
+   Keep your existing Runtime and Selected-Game.txt in that folder.
+4. Double-click Launch-Outdoor.cmd (Windows Batch File).
+   If Windows hides extensions, select Launch-Outdoor, not Launch-Cafe.ps1.
+
+Launch-Cafe.cmd still opens the working cafe. The outdoor launcher loads a
+separate mod folder and uses OutdoorTestData, so the two maps do not conflict.
+If you extract to a fresh folder, the launcher will download Dusklight and ask
+for your Twilight Princess disc image again. You do not need Dolphin for this.
+
+WHAT TO TEST
+Link should start on the road in a small Old Silent Hill street section.
+Walk, turn the camera, and approach the pavement and parked car.
+The outer limits are invisible collision barriers to keep this test bounded.
+There is no connected cafe doorway, larger town, or enemy setup yet.
+The supplied street-asset-preview.png is an asset render, not a game screenshot.
+
+CHECKS COMPLETED
+Model/texture parsing; collision table/index/tree validation; correct DZB
+resource-loader dispatch; ground coverage samples; spawn floor and headroom.
+The cafe was confirmed working by you. This outdoor build still needs your
+in-game test. Mesh-derived collision may need adjustment around small props.
+
+IF IT FAILS
+Double-click Open-Outdoor-Logs.cmd and send the newest log, plus a screenshot
+if the game reaches the map. Say whether it crashes, freezes, or Link falls.
+Launch-Outdoor-D3D11.cmd offers the alternate graphics backend if needed.

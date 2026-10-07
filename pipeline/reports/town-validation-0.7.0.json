@@ -1,0 +1,152 @@
+{
+ "rooms": {
+  "0": {
+   "archive_bytes": 2388576,
+   "spawns": 14,
+   "exits": 13,
+   "triggers": 13,
+   "enemies": 10,
+   "reachable_m2": 7397.6875
+  },
+  "1": {
+   "archive_bytes": 305344,
+   "spawns": 3,
+   "exits": 1,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 176.3125
+  },
+  "2": {
+   "archive_bytes": 2781952,
+   "spawns": 5,
+   "exits": 3,
+   "triggers": 3,
+   "enemies": 10,
+   "reachable_m2": 7750.0
+  },
+  "3": {
+   "archive_bytes": 2224320,
+   "spawns": 4,
+   "exits": 2,
+   "triggers": 2,
+   "enemies": 8,
+   "reachable_m2": 5696.75
+  },
+  "4": {
+   "archive_bytes": 416960,
+   "spawns": 3,
+   "exits": 1,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 281.0625
+  },
+  "5": {
+   "archive_bytes": 513536,
+   "spawns": 3,
+   "exits": 1,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 396.0
+  },
+  "6": {
+   "archive_bytes": 3013440,
+   "spawns": 7,
+   "exits": 5,
+   "triggers": 5,
+   "enemies": 11,
+   "reachable_m2": 8484.5
+  },
+  "7": {
+   "archive_bytes": 2088704,
+   "spawns": 9,
+   "exits": 7,
+   "triggers": 7,
+   "enemies": 6,
+   "reachable_m2": 4648.9375
+  },
+  "8": {
+   "archive_bytes": 2198080,
+   "spawns": 10,
+   "exits": 8,
+   "triggers": 8,
+   "enemies": 8,
+   "reachable_m2": 5877.6875
+  },
+  "9": {
+   "archive_bytes": 2204032,
+   "spawns": 10,
+   "exits": 5,
+   "triggers": 5,
+   "enemies": 8,
+   "reachable_m2": 5771.75
+  },
+  "11": {
+   "archive_bytes": 2496640,
+   "spawns": 8,
+   "exits": 6,
+   "triggers": 6,
+   "enemies": 10,
+   "reachable_m2": 7017.875
+  },
+  "12": {
+   "archive_bytes": 2532832,
+   "spawns": 12,
+   "exits": 10,
+   "triggers": 10,
+   "enemies": 10,
+   "reachable_m2": 7467.8125
+  },
+  "13": {
+   "archive_bytes": 2020608,
+   "spawns": 11,
+   "exits": 9,
+   "triggers": 9,
+   "enemies": 7,
+   "reachable_m2": 5532.125
+  },
+  "14": {
+   "archive_bytes": 1086944,
+   "spawns": 5,
+   "exits": 3,
+   "triggers": 3,
+   "enemies": 3,
+   "reachable_m2": 2111.6875
+  },
+  "15": {
+   "archive_bytes": 848480,
+   "spawns": 7,
+   "exits": 5,
+   "triggers": 5,
+   "enemies": 0,
+   "reachable_m2": 1451.25
+  },
+  "16": {
+   "archive_bytes": 1453600,
+   "spawns": 8,
+   "exits": 6,
+   "triggers": 6,
+   "enemies": 6,
+   "reachable_m2": 4563.8125
+  },
+  "17": {
+   "archive_bytes": 863296,
+   "spawns": 8,
+   "exits": 6,
+   "triggers": 6,
+   "enemies": 1,
+   "reachable_m2": 1793.1875
+  }
+ },
+ "errors": [],
+ "unreachable_rooms": [
+  1,
+  2,
+  6,
+  11,
+  14
+ ],
+ "connected_rooms": 12,
+ "links": 38,
+ "total_reachable_m2": 76418.4375,
+ "largest_room_archive_bytes": 3013440
+}

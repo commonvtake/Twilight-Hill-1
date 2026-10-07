@@ -1,0 +1,47 @@
+{
+  "version": "0.7.0",
+  "name": "Old Silent Hill - Central Block",
+  "tiles": [
+    "THRFF00",
+    "THRFF01",
+    "THRFF02",
+    "THR0000",
+    "THR0001",
+    "THR0002",
+    "THR0100",
+    "THR0101",
+    "THR0102"
+  ],
+  "grid": "SH town grid x -1..1, y 0..2 (3 x 3 tiles, 40 m each)",
+  "origin_metres": [
+    -20,
+    0,
+    60
+  ],
+  "collision_max_low_point_cm": 450,
+  "boundary_inset_cm": 30,
+  "stage": "R_SP109",
+  "room": 0,
+  "spawn_xz_cm": [
+    500.0,
+    0.0
+  ],
+  "enemies": {
+    "groaner": 6,
+    "air_screamer": 4,
+    "keep_away_xz_cm": [
+      [
+        500.0,
+        0.0
+      ],
+      [
+        160.0,
+        -350.0
+      ],
+      [
+        -60.0,
+        -350.0
+      ]
+    ]
+  }
+}
