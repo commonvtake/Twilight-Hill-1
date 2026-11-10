@@ -20,14 +20,14 @@ collision files, and a native C++ mod hooks the game at runtime to add the contr
 systems the crossover needs. You walk Old Silent Hill's foggy streets as Link, enter its buildings
 through working doors, and fight its creatures with Twilight Princess combat.
 
-> **Status:** playable prototype (0.8.0), about 20% of the full campaign. See [PROGRESS.md](PROGRESS.md).
+> **Status:** playable prototype (0.8.0), about 22% of the full campaign. See [PROGRESS.md](PROGRESS.md).
 > You need your own legally obtained copies of both games. No game files are included in this repository.
 
 ---
 
 ## Highlights
 
-| | |
+| Feature | Details |
 |---|---|
 | **The whole Old Silent Hill map** | 115 original map tiles converted into 17 street areas of one Twilight Princess stage, joined by seamless load zones |
 | **Buildings with working doors** | 10 interiors behind 24 knob doors, wired from Silent Hill's own door data (map points + `LoadRoom` events) |
@@ -80,7 +80,7 @@ GitHub Actions compiles it for Windows, Linux, macOS, iOS and Android and publis
 
 ### Debugging story: the shared exit table
 
-Playtests of 0.7.0 crashed with `Destination buffer too small! Need 17, have 8` after walking
+Playtests of 0.7.0 aborted with `Destination buffer too small!` after walking
 between areas. Reading the engine source showed why: while Link is between rooms (mid door
 animation, mid-air) his room number is −1, and `dStage_changeScene` then looks the exit up in the
 **stage's** table instead of the room's. The stage table had one entry, so any exit index above 0
