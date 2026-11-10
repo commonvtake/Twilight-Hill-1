@@ -1,0 +1,227 @@
+{
+ "rooms": {
+  "0": {
+   "archive_bytes": 2390016,
+   "spawns": 15,
+   "exits": 118,
+   "triggers": 14,
+   "enemies": 10,
+   "reachable_m2": 7397.6875
+  },
+  "1": {
+   "archive_bytes": 306880,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 176.3125
+  },
+  "2": {
+   "archive_bytes": 2788864,
+   "spawns": 6,
+   "exits": 118,
+   "triggers": 4,
+   "enemies": 10,
+   "reachable_m2": 7779.0625
+  },
+  "3": {
+   "archive_bytes": 2226208,
+   "spawns": 5,
+   "exits": 118,
+   "triggers": 3,
+   "enemies": 8,
+   "reachable_m2": 5711.5
+  },
+  "4": {
+   "archive_bytes": 418496,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 281.0625
+  },
+  "5": {
+   "archive_bytes": 515072,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 396.0
+  },
+  "6": {
+   "archive_bytes": 3015072,
+   "spawns": 8,
+   "exits": 118,
+   "triggers": 6,
+   "enemies": 11,
+   "reachable_m2": 8484.5
+  },
+  "7": {
+   "archive_bytes": 2090176,
+   "spawns": 9,
+   "exits": 118,
+   "triggers": 7,
+   "enemies": 6,
+   "reachable_m2": 4648.9375
+  },
+  "8": {
+   "archive_bytes": 2199520,
+   "spawns": 10,
+   "exits": 118,
+   "triggers": 8,
+   "enemies": 8,
+   "reachable_m2": 5877.6875
+  },
+  "9": {
+   "archive_bytes": 2206144,
+   "spawns": 12,
+   "exits": 118,
+   "triggers": 7,
+   "enemies": 8,
+   "reachable_m2": 5782.4375
+  },
+  "11": {
+   "archive_bytes": 2497856,
+   "spawns": 9,
+   "exits": 118,
+   "triggers": 7,
+   "enemies": 10,
+   "reachable_m2": 7029.375
+  },
+  "12": {
+   "archive_bytes": 2534976,
+   "spawns": 14,
+   "exits": 118,
+   "triggers": 12,
+   "enemies": 10,
+   "reachable_m2": 7490.75
+  },
+  "13": {
+   "archive_bytes": 2022016,
+   "spawns": 11,
+   "exits": 118,
+   "triggers": 9,
+   "enemies": 7,
+   "reachable_m2": 5532.125
+  },
+  "14": {
+   "archive_bytes": 1088448,
+   "spawns": 5,
+   "exits": 118,
+   "triggers": 3,
+   "enemies": 3,
+   "reachable_m2": 2111.6875
+  },
+  "15": {
+   "archive_bytes": 849952,
+   "spawns": 7,
+   "exits": 118,
+   "triggers": 5,
+   "enemies": 0,
+   "reachable_m2": 1451.25
+  },
+  "16": {
+   "archive_bytes": 1455040,
+   "spawns": 8,
+   "exits": 118,
+   "triggers": 6,
+   "enemies": 6,
+   "reachable_m2": 4563.8125
+  },
+  "17": {
+   "archive_bytes": 864736,
+   "spawns": 8,
+   "exits": 118,
+   "triggers": 6,
+   "enemies": 1,
+   "reachable_m2": 1793.1875
+  },
+  "18": {
+   "archive_bytes": 376000,
+   "spawns": 4,
+   "exits": 118,
+   "triggers": 2,
+   "enemies": 0,
+   "reachable_m2": 91.25
+  },
+  "19": {
+   "archive_bytes": 303936,
+   "spawns": 4,
+   "exits": 118,
+   "triggers": 2,
+   "enemies": 0,
+   "reachable_m2": 72.6875
+  },
+  "20": {
+   "archive_bytes": 367456,
+   "spawns": 4,
+   "exits": 118,
+   "triggers": 2,
+   "enemies": 0,
+   "reachable_m2": 74.25
+  },
+  "21": {
+   "archive_bytes": 394880,
+   "spawns": 4,
+   "exits": 118,
+   "triggers": 2,
+   "enemies": 0,
+   "reachable_m2": 262.0625
+  },
+  "22": {
+   "archive_bytes": 635488,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 607.625
+  },
+  "23": {
+   "archive_bytes": 289024,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 16.75
+  },
+  "24": {
+   "archive_bytes": 348032,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 45.3125
+  },
+  "25": {
+   "archive_bytes": 457216,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 314.8125
+  },
+  "26": {
+   "archive_bytes": 786176,
+   "spawns": 4,
+   "exits": 118,
+   "triggers": 2,
+   "enemies": 0,
+   "reachable_m2": 316.75
+  },
+  "27": {
+   "archive_bytes": 300288,
+   "spawns": 3,
+   "exits": 118,
+   "triggers": 1,
+   "enemies": 0,
+   "reachable_m2": 21.1875
+  }
+ },
+ "errors": [],
+ "unreachable_rooms": [],
+ "doors": 25,
+ "connected_rooms": 27,
+ "links": 62,
+ "total_reachable_m2": 78330.0625,
+ "largest_room_archive_bytes": 3015072
+}

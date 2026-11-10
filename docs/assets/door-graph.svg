@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1238" height="638" viewBox="0 0 1238 638" role="img" aria-label="Room graph of the converted Old Silent Hill stage: street blocks joined by load zones, building interiors joined by doors">
+<style>.t{font-family:"Segoe UI",Helvetica,Arial,sans-serif;fill:#e8e6df}.h{font-size:14px;font-weight:600}.s{font-size:11.5px;fill:#a9b0ad}.k{font-size:12px;fill:#8f9794;letter-spacing:2px}</style>
+<rect width="1238" height="638" rx="16" fill="#14181a"/>
+<text x="60" y="44" class="t k">OLD SILENT HILL · ROOM GRAPH</text>
+<text x="60" y="70" class="t s">17 street blocks (3×3 map tiles each, laid out as on the map) · 10 interiors · 19 load-zone links · 24 doors joining 12 room pairs</text>
+<line x1="938" y1="66" x2="972" y2="66" stroke="#6d7674" stroke-width="3"/><text x="980" y="70" class="t s">street load zone</text>
+<line x1="1088" y1="66" x2="1122" y2="66" stroke="#c9a227" stroke-width="2.5" stroke-dasharray="6 4"/><text x="1130" y="70" class="t s">door</text>
+<text x="900" y="106" class="t k">INTERIORS</text>
+<text x="60" y="106" class="t k">STREETS</text>
+<line x1="285.0" y1="288.0" x2="285.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="285.0" y1="288.0" x2="435.0" y2="288.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="285.0" y1="288.0" x2="135.0" y2="288.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="285.0" y1="288.0" x2="285.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="735.0" y1="512.0" x2="585.0" y2="512.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="585.0" y1="512.0" x2="585.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="512.0" x2="285.0" y2="512.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="512.0" x2="435.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="135.0" y1="512.0" x2="135.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="585.0" y1="400.0" x2="585.0" y2="288.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="400.0" x2="285.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="400.0" x2="435.0" y2="288.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="285.0" y1="400.0" x2="135.0" y2="400.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="135.0" y1="400.0" x2="135.0" y2="288.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="585.0" y1="288.0" x2="585.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="288.0" x2="435.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="135.0" y1="288.0" x2="135.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="435.0" y1="176.0" x2="285.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<line x1="285.0" y1="176.0" x2="135.0" y2="176.0" stroke="#6d7674" stroke-width="3"/>
+<circle cx="183.0" cy="369.0" r="3.2" fill="#c9a227"/>
+<path d="M183.0 369.0 V337.0 H866.0 C884.0 337.0 884.0 433.6 900.0 433.6" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="174.0" cy="369.0" r="3.2" fill="#c9a227"/>
+<path d="M174.0 369.0 V344.0 H871.0 C889.0 344.0 889.0 433.6 1064.0 433.6" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="333.0" cy="257.0" r="3.2" fill="#c9a227"/>
+<path d="M333.0 257.0 V225.0 H876.0 C894.0 225.0 894.0 254.4 1064.0 254.4" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="474.0" cy="257.0" r="3.2" fill="#c9a227"/>
+<path d="M474.0 257.0 V232.0 H881.0 C899.0 232.0 899.0 344.0 900.0 344.0" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="465.0" cy="257.0" r="3.2" fill="#c9a227"/>
+<path d="M465.0 257.0 V239.0 H886.0 C904.0 239.0 904.0 164.8 1064.0 164.8" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="483.0" cy="481.0" r="3.2" fill="#c9a227"/>
+<path d="M483.0 481.0 V449.0 H866.0 C884.0 449.0 884.0 523.2 1064.0 523.2" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="624.0" cy="481.0" r="3.2" fill="#c9a227"/>
+<path d="M624.0 481.0 V456.0 H871.0 C889.0 456.0 889.0 523.2 900.0 523.2" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="606.0" cy="257.0" r="3.2" fill="#c9a227"/>
+<path d="M606.0 257.0 V246.0 H876.0 C894.0 246.0 894.0 254.4 900.0 254.4" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<circle cx="615.0" cy="369.0" r="3.2" fill="#c9a227"/>
+<path d="M615.0 369.0 V351.0 H881.0 C899.0 351.0 899.0 344.0 1064.0 344.0" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<path d="M962.0 195.8 V313.0" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<path d="M1024.0 523.2 C1044.0 523.2 1044.0 523.2 1064.0 523.2" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<path d="M1024.0 254.4 C1044.0 254.4 1044.0 164.8 1064.0 164.8" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-dasharray="6 4" opacity="0.9"/>
+<rect x="223.0" y="257.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#9fb36a" stroke-width="1.6"/>
+<text x="285.0" y="284.0" text-anchor="middle" class="t h">Block 0</text>
+<text x="285.0" y="303.0" text-anchor="middle" class="t s">9 tiles · 7.4k m²</text>
+<rect x="673.0" y="481.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="735.0" y="508.0" text-anchor="middle" class="t h">Block 1</text>
+<text x="735.0" y="527.0" text-anchor="middle" class="t s">1 tiles · 0.2k m²</text>
+<rect x="523.0" y="481.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="585.0" y="508.0" text-anchor="middle" class="t h">Block 2</text>
+<text x="585.0" y="527.0" text-anchor="middle" class="t s">9 tiles · 7.8k m²</text>
+<rect x="373.0" y="481.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="435.0" y="508.0" text-anchor="middle" class="t h">Block 3</text>
+<text x="435.0" y="527.0" text-anchor="middle" class="t s">9 tiles · 5.7k m²</text>
+<rect x="223.0" y="481.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="285.0" y="508.0" text-anchor="middle" class="t h">Block 4</text>
+<text x="285.0" y="527.0" text-anchor="middle" class="t s">2 tiles · 0.3k m²</text>
+<rect x="73.0" y="481.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="135.0" y="508.0" text-anchor="middle" class="t h">Block 5</text>
+<text x="135.0" y="527.0" text-anchor="middle" class="t s">2 tiles · 0.4k m²</text>
+<rect x="523.0" y="369.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="585.0" y="396.0" text-anchor="middle" class="t h">Block 6</text>
+<text x="585.0" y="415.0" text-anchor="middle" class="t s">9 tiles · 8.5k m²</text>
+<rect x="373.0" y="369.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="435.0" y="396.0" text-anchor="middle" class="t h">Block 7</text>
+<text x="435.0" y="415.0" text-anchor="middle" class="t s">8 tiles · 4.6k m²</text>
+<rect x="223.0" y="369.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="285.0" y="396.0" text-anchor="middle" class="t h">Block 8</text>
+<text x="285.0" y="415.0" text-anchor="middle" class="t s">9 tiles · 5.9k m²</text>
+<rect x="73.0" y="369.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="135.0" y="396.0" text-anchor="middle" class="t h">Block 9</text>
+<text x="135.0" y="415.0" text-anchor="middle" class="t s">8 tiles · 5.8k m²</text>
+<rect x="523.0" y="257.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="585.0" y="284.0" text-anchor="middle" class="t h">Block 11</text>
+<text x="585.0" y="303.0" text-anchor="middle" class="t s">9 tiles · 7.0k m²</text>
+<rect x="373.0" y="257.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="435.0" y="284.0" text-anchor="middle" class="t h">Block 12</text>
+<text x="435.0" y="303.0" text-anchor="middle" class="t s">9 tiles · 7.5k m²</text>
+<rect x="73.0" y="257.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="135.0" y="284.0" text-anchor="middle" class="t h">Block 13</text>
+<text x="135.0" y="303.0" text-anchor="middle" class="t s">7 tiles · 5.5k m²</text>
+<rect x="523.0" y="145.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="585.0" y="172.0" text-anchor="middle" class="t h">Block 14</text>
+<text x="585.0" y="191.0" text-anchor="middle" class="t s">3 tiles · 2.1k m²</text>
+<rect x="373.0" y="145.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="435.0" y="172.0" text-anchor="middle" class="t h">Block 15</text>
+<text x="435.0" y="191.0" text-anchor="middle" class="t s">3 tiles · 1.5k m²</text>
+<rect x="223.0" y="145.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="285.0" y="172.0" text-anchor="middle" class="t h">Block 16</text>
+<text x="285.0" y="191.0" text-anchor="middle" class="t s">5 tiles · 4.6k m²</text>
+<rect x="73.0" y="145.0" width="124" height="62" rx="9" fill="#1f2528" stroke="#4a5355" stroke-width="1.6"/>
+<text x="135.0" y="172.0" text-anchor="middle" class="t h">Block 17</text>
+<text x="135.0" y="191.0" text-anchor="middle" class="t s">3 tiles · 1.8k m²</text>
+<rect x="900.0" y="492.2" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="962.0" y="519.2" text-anchor="middle" class="t h">0109</text>
+<text x="962.0" y="538.2" text-anchor="middle" class="t s">interior · 91 m²</text>
+<rect x="1064.0" y="133.8" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="1126.0" y="160.8" text-anchor="middle" class="t h">0205 · 0305</text>
+<text x="1126.0" y="179.8" text-anchor="middle" class="t s">interior · 73 m²</text>
+<rect x="1064.0" y="492.2" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="1126.0" y="519.2" text-anchor="middle" class="t h">0207 · 0307</text>
+<text x="1126.0" y="538.2" text-anchor="middle" class="t s">interior · 74 m²</text>
+<rect x="900.0" y="223.4" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="962.0" y="250.4" text-anchor="middle" class="t h">0309</text>
+<text x="962.0" y="269.4" text-anchor="middle" class="t s">interior · 262 m²</text>
+<rect x="1064.0" y="313.0" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="1126.0" y="340.0" text-anchor="middle" class="t h">0505</text>
+<text x="1126.0" y="359.0" text-anchor="middle" class="t s">interior · 608 m²</text>
+<rect x="900.0" y="402.6" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="962.0" y="429.6" text-anchor="middle" class="t h">0508</text>
+<text x="962.0" y="448.6" text-anchor="middle" class="t s">interior · 17 m²</text>
+<rect x="900.0" y="133.8" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="962.0" y="160.8" text-anchor="middle" class="t h">FB07</text>
+<text x="962.0" y="179.8" text-anchor="middle" class="t s">interior · 45 m²</text>
+<rect x="1064.0" y="223.4" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="1126.0" y="250.4" text-anchor="middle" class="t h">FB09</text>
+<text x="1126.0" y="269.4" text-anchor="middle" class="t s">interior · 315 m²</text>
+<rect x="900.0" y="313.0" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="962.0" y="340.0" text-anchor="middle" class="t h">FD05 · FD06</text>
+<text x="962.0" y="359.0" text-anchor="middle" class="t s">interior · 317 m²</text>
+<rect x="1064.0" y="402.6" width="124" height="62" rx="9" fill="#2a2620" stroke="#c9a227" stroke-width="1.6"/>
+<text x="1126.0" y="429.6" text-anchor="middle" class="t h">FE08</text>
+<text x="1126.0" y="448.6" text-anchor="middle" class="t s">interior · 21 m²</text>
+<text x="60" y="610" class="t s">Generated by pipeline/tools/make_room_graph.py from the build report. Block 0 (green) is the starting area.</text>
+</svg>

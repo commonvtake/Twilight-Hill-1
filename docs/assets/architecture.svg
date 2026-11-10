@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-label="How Twilight Hill works: Silent Hill map data is converted offline into Zelda stage files, a C++ mod hooks the game at runtime, and both load into Dusklight">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8f9794"/>
+    </marker>
+    <style>
+      .t { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; fill: #e8e6df; }
+      .h { font-size: 17px; font-weight: 600; }
+      .s { font-size: 13px; fill: #b3b9b6; }
+      .k { font-size: 12px; fill: #8f9794; letter-spacing: 2px; }
+      .box { fill: #1f2528; stroke: #3d4547; stroke-width: 1.5; rx: 10; }
+      .src { fill: #1a1f21; stroke: #59605f; stroke-dasharray: 5 4; }
+      .acc { fill: #262d24; stroke: #6f7f4a; }
+      .eng { fill: #2a2620; stroke: #c9a227; }
+      .ln  { stroke: #8f9794; stroke-width: 1.8; fill: none; marker-end: url(#arr); }
+    </style>
+  </defs>
+  <rect width="1200" height="570" rx="16" fill="#14181a"/>
+  <text x="40" y="44" class="t k">OFFLINE  ·  BUILD TIME</text>
+  <text x="820" y="44" class="t k">RUNTIME  ·  YOUR PC</text>
+  <line x1="770" y1="30" x2="770" y2="530" stroke="#2c3335" stroke-width="2"/>
+
+  <!-- inputs -->
+  <rect x="40" y="70" width="230" height="96" class="box src"/>
+  <text x="58" y="104" class="t h">Silent Hill disc</text>
+  <text x="58" y="128" class="t s">your own copy (SLUS-00707)</text>
+  <text x="58" y="148" class="t s">map tiles · textures · TOC</text>
+
+  <rect x="40" y="196" width="230" height="96" class="box src"/>
+  <text x="58" y="230" class="t h">SH decomp data</text>
+  <text x="58" y="254" class="t s">map points + door events</text>
+  <text x="58" y="274" class="t s">(read as data, not run)</text>
+
+  <rect x="40" y="322" width="230" height="96" class="box src"/>
+  <text x="58" y="356" class="t h">Twilight Princess disc</text>
+  <text x="58" y="380" class="t s">your own copy (GZ2E01)</text>
+  <text x="58" y="400" class="t s">stage templates · actors</text>
+
+  <!-- pipeline -->
+  <rect x="330" y="70" width="400" height="348" class="box acc"/>
+  <text x="352" y="104" class="t h">Conversion pipeline · Python</text>
+  <text x="352" y="136" class="t s">1  IPD/PLM tiles → OBJ in original SH coordinates</text>
+  <text x="352" y="164" class="t s">2  J3D models: C8 palettes, S16 fixed-point verts</text>
+  <text x="352" y="192" class="t s">3  DZB collision: octree, drop barriers, walls</text>
+  <text x="352" y="220" class="t s">4  3×3-tile blocks → rooms of one stage</text>
+  <text x="352" y="248" class="t s">5  street load zones + doors from SH door graph</text>
+  <text x="352" y="276" class="t s">6  one shared exit table · enemy placement</text>
+  <text x="352" y="304" class="t s">7  native fog per material and palette</text>
+  <text x="352" y="332" class="t s">8  static validators: reachability, exits,</text>
+  <text x="372" y="352" class="t s">spawns, memory budget, texture fidelity</text>
+  <text x="352" y="396" class="t k">numpy · Pillow · gclib · dzb_tools</text>
+
+  <path d="M270 118 H322" class="ln"/>
+  <path d="M270 244 H322" class="ln"/>
+  <path d="M270 370 H322" class="ln"/>
+
+  <!-- outputs -->
+  <rect x="330" y="446" width="190" height="84" class="box"/>
+  <text x="348" y="478" class="t h">Area mod (.dusk)</text>
+  <text x="348" y="502" class="t s">stage + room archives</text>
+  <rect x="540" y="446" width="190" height="84" class="box"/>
+  <text x="558" y="478" class="t h">Silent Hill Core</text>
+  <text x="558" y="502" class="t s">C++20 · GitHub Actions</text>
+  <path d="M425 418 V438" class="ln"/>
+
+  <!-- runtime -->
+  <rect x="820" y="70" width="340" height="190" class="box eng"/>
+  <text x="842" y="104" class="t h">Dusklight</text>
+  <text x="842" y="128" class="t s">native PC version of Twilight Princess</text>
+  <text x="842" y="160" class="t s">loads area mods as file overlays</text>
+  <text x="842" y="184" class="t s">loads native mods + service APIs</text>
+  <text x="842" y="216" class="t s">engine: actors, combat, doors,</text>
+  <text x="842" y="236" class="t s">collision, fog, menus</text>
+
+  <rect x="820" y="300" width="340" height="230" class="box"/>
+  <text x="842" y="334" class="t h">Function hooks (Silent Hill Core)</text>
+  <text x="842" y="364" class="t s">daAlink_c::checkNextAction → jump, dodge roll</text>
+  <text x="842" y="390" class="t s">daAlink_c::create → Harry's starting kit</text>
+  <text x="842" y="416" class="t s">dMw_c option proc → settings from pause</text>
+  <text x="842" y="442" class="t s">daE_SH_Execute/Draw → enemies in the fog</text>
+  <text x="842" y="468" class="t s">SafeStringCopy → crash guard + log</text>
+  <text x="842" y="504" class="t k">HookService · UiService · ConfigService</text>
+
+  <path d="M425 530 V548 H790 V165 H812" class="ln"/>
+  <path d="M730 488 H812" class="ln"/>
+  <path d="M990 260 V292" class="ln"/>
+</svg>

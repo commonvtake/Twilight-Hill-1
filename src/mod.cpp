@@ -34,6 +34,8 @@
 #include "d/d_save.h"
 #include "dolphin/pad.h"
 
+#include <cstddef>
+
 #include <cmath>
 #include <cstdint>
 #include <cstring>
@@ -50,6 +52,7 @@ DEFINE_HOOK(&daAlink_c::checkNextAction, LinkCheckNextAction);
 DEFINE_HOOK(&daAlink_c::create, LinkCreate);
 DEFINE_HOOK_SYMBOL("daE_SH_Execute", int(void*), StalhoundExecute);
 DEFINE_HOOK_SYMBOL("daE_SH_Draw", int(void*), StalhoundDraw);
+DEFINE_HOOK_SYMBOL("SafeStringCopy", void(char*, size_t, const char*), HostSafeStringCopy);
 
 namespace {
 
@@ -428,6 +431,43 @@ void stalhound_post(ModContext*, void*, void*, void*) {
     }
 }
 
+// ---------------------------------------------------------------- 6. crash guard
+//
+// Dusklight's SafeStringCopy() deliberately aborts the game when a string does not fit its
+// destination. 0.7.0 hit this ("Destination buffer too small! Need 17, have 8") when a scene change
+// read an exit outside the stage's exit table. 0.8.0 fixes the data (one shared exit table), and this
+// guard truncates instead of aborting, logging the offending text once so a log identifies the cause.
+bool g_inGuard = false;
+int g_guardReports = 0;
+
+void on_safe_string_copy(ModContext*, void* args, void*, void*) {
+    char* buffer = mods::arg<char*>(args, 0);
+    const size_t size = mods::arg<size_t>(args, 1);
+    const char* src = mods::arg<const char*>(args, 2);
+    if (buffer == nullptr || size == 0) {
+        return;
+    }
+    if (src == nullptr) {
+        buffer[0] = 0;
+        return;
+    }
+    size_t n = 0;
+    while (n + 1 < size && src[n] != 0) {
+        ++n;
+    }
+    const bool truncated = src[n] != 0;
+    if (buffer != src) {
+        std::memmove(buffer, src, n);
+    }
+    buffer[n] = 0;
+    if (truncated && !g_inGuard && g_guardReports < 20) {
+        g_inGuard = true;
+        ++g_guardReports;
+        mods::log::warn("crash guard: truncated a {}-byte copy to {} bytes: '{}'", std::strlen(src) + 1, size, buffer);
+        g_inGuard = false;
+    }
+}
+
 // ---------------------------------------------------------------- options window
 
 UiWindowHandle g_optionsWindow = 0;
@@ -592,6 +632,10 @@ MOD_EXPORT ModResult mod_initialize(ModError* error) {
         mods::log::warn("Stalhound night hooks unavailable; they will only appear at night");
     }
 
+    if (mods::hook::replace<HostSafeStringCopy>(on_safe_string_copy) != MOD_OK) {
+        mods::log::warn("crash guard unavailable on this Dusklight build");
+    }
+
     UiModsPanelDesc panel = UI_MODS_PANEL_DESC_INIT;
     panel.build = build_panel;
     svc_ui->register_mods_panel(mod_ctx, &panel);
@@ -601,7 +645,7 @@ MOD_EXPORT ModResult mod_initialize(ModError* error) {
     tab.on_selected = open_options_window;
     svc_ui->register_menu_tab(mod_ctx, &tab, &g_menuTab);
 
-    mods::log::info("Silent Hill Core 0.7.0 initialized (menu {}, LB {}, keyboard {})", host_menu_available() ? "ok" : "unavailable", g_sdlGetGamepadButton ? "ok" : "fallback", g_sdlGetKeyboardState ? "ok" : "unavailable");
+    mods::log::info("Silent Hill Core 0.8.0 initialized (menu {}, LB {}, keyboard {})", host_menu_available() ? "ok" : "unavailable", g_sdlGetGamepadButton ? "ok" : "fallback", g_sdlGetKeyboardState ? "ok" : "unavailable");
     return MOD_OK;
 }
 

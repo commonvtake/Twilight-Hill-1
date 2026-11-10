@@ -1,0 +1,2553 @@
+{
+ "stage": "D_SB01",
+ "version": "0.8.0",
+ "rooms": [
+  {
+   "room": 0,
+   "kind": "town",
+   "chunk": [
+    0,
+    0
+   ],
+   "tiles": [
+    "THR0000",
+    "THR0001",
+    "THR0002",
+    "THR0100",
+    "THR0101",
+    "THR0102",
+    "THRFF00",
+    "THRFF01",
+    "THRFF02"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 35101,
+   "collision_faces": 34162,
+   "tree_nodes": 8191,
+   "model_bytes": 1601248,
+   "collision_bytes": 784416,
+   "dzr_bytes": 3584,
+   "reachable_m2": 7397.6875,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 15,
+   "doors": [
+    {
+     "exit": 11,
+     "pos": [
+      -3198.6687939994854,
+      0.0,
+      1300.1311123471482
+     ],
+     "yaw": 48128,
+     "to_room": 25,
+     "spawn": 2,
+     "wall_dist_cm": 4.3376471370959475
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 13,
+     "spawn": 2,
+     "exit": 25
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 13,
+     "spawn": 3,
+     "exit": 27
+    },
+    {
+     "center": [
+      -4465.625,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 16,
+     "spawn": 2,
+     "exit": 29
+    },
+    {
+     "center": [
+      -1496.875,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 16,
+     "spawn": 3,
+     "exit": 31
+    },
+    {
+     "center": [
+      1471.875,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 16,
+     "spawn": 4,
+     "exit": 33
+    },
+    {
+     "center": [
+      4440.625,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 16,
+     "spawn": 5,
+     "exit": 35
+    },
+    {
+     "center": [
+      -4465.625,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 8,
+     "spawn": 6,
+     "exit": 72
+    },
+    {
+     "center": [
+      -1496.875,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 8,
+     "spawn": 7,
+     "exit": 74
+    },
+    {
+     "center": [
+      1471.875,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 8,
+     "spawn": 8,
+     "exit": 76
+    },
+    {
+     "center": [
+      4440.625,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 8,
+     "spawn": 9,
+     "exit": 78
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 12,
+     "spawn": 8,
+     "exit": 93
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 12,
+     "spawn": 9,
+     "exit": 95
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 1,
+   "kind": "town",
+   "chunk": [
+    -3,
+    -2
+   ],
+   "tiles": [
+    "THRF8FB"
+   ],
+   "origin_m": [
+    340.0,
+    0.0,
+    -180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 1566,
+   "collision_faces": 1595,
+   "tree_nodes": 511,
+   "model_bytes": 264576,
+   "collision_bytes": 39168,
+   "dzr_bytes": 2368,
+   "reachable_m2": 176.3125,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -5850.0,
+      135.15619999999998,
+      0.0
+     ],
+     "half_width_cm": 1400.0,
+     "to_room": 2,
+     "spawn": 3,
+     "exit": 37
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 2,
+   "kind": "town",
+   "chunk": [
+    -2,
+    -2
+   ],
+   "tiles": [
+    "THRF9FA",
+    "THRF9FB",
+    "THRF9FC",
+    "THRFAFA",
+    "THRFAFB",
+    "THRFAFC",
+    "THRFBFA",
+    "THRFBFB",
+    "THRFBFC"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    -180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 40003,
+   "collision_faces": 42930,
+   "tree_nodes": 12131,
+   "model_bytes": 1761856,
+   "collision_bytes": 1023328,
+   "dzr_bytes": 2912,
+   "reachable_m2": 7779.0625,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 6,
+   "doors": [
+    {
+     "exit": 18,
+     "pos": [
+      -4803.514798280499,
+      0.0,
+      3364.313654180017
+     ],
+     "yaw": 1024,
+     "to_room": 18,
+     "spawn": 3,
+     "wall_dist_cm": 38.8590167870793
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      5850.0,
+      132.61714999999998,
+      0.0
+     ],
+     "half_width_cm": 1400.0,
+     "to_room": 1,
+     "spawn": 2,
+     "exit": 38
+    },
+    {
+     "center": [
+      1018.75,
+      14.843799999999998,
+      5850.0
+     ],
+     "half_width_cm": 1243.75,
+     "to_room": 6,
+     "spawn": 3,
+     "exit": 39
+    },
+    {
+     "center": [
+      3406.25,
+      14.843799999999998,
+      5850.0
+     ],
+     "half_width_cm": 1243.75,
+     "to_room": 6,
+     "spawn": 4,
+     "exit": 41
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 3,
+   "kind": "town",
+   "chunk": [
+    -1,
+    -2
+   ],
+   "tiles": [
+    "THRFCFA",
+    "THRFCFB",
+    "THRFCFC",
+    "THRFDFA",
+    "THRFDFB",
+    "THRFDFC",
+    "THRFEFA",
+    "THRFEFB",
+    "THRFEFC"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    -180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 31539,
+   "collision_faces": 30555,
+   "tree_nodes": 8191,
+   "model_bytes": 1500320,
+   "collision_bytes": 722336,
+   "dzr_bytes": 2784,
+   "reachable_m2": 5711.5,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 5,
+   "doors": [
+    {
+     "exit": 15,
+     "pos": [
+      4282.1562,
+      109.76559999999999,
+      3100.0
+     ],
+     "yaw": 49152,
+     "to_room": 20,
+     "spawn": 3,
+     "wall_dist_cm": 10.156200000000355
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      -2075.0
+     ],
+     "half_width_cm": 1225.0,
+     "to_room": 4,
+     "spawn": 2,
+     "exit": 43
+    },
+    {
+     "center": [
+      -3800.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 550.0,
+     "to_room": 7,
+     "spawn": 2,
+     "exit": 45
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 4,
+   "kind": "town",
+   "chunk": [
+    0,
+    -2
+   ],
+   "tiles": [
+    "THRFFFA",
+    "THRFFFB"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    -180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 1898,
+   "collision_faces": 1803,
+   "tree_nodes": 511,
+   "model_bytes": 371552,
+   "collision_bytes": 43808,
+   "dzr_bytes": 2368,
+   "reachable_m2": 281.0625,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -2075.0
+     ],
+     "half_width_cm": 1225.0,
+     "to_room": 3,
+     "spawn": 3,
+     "exit": 44
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 5,
+   "kind": "town",
+   "chunk": [
+    1,
+    -2
+   ],
+   "tiles": [
+    "THR02FC",
+    "THR03FC"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    -180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 3240,
+   "collision_faces": 3453,
+   "tree_nodes": 1023,
+   "model_bytes": 429248,
+   "collision_bytes": 82688,
+   "dzr_bytes": 2368,
+   "reachable_m2": 396.0,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      1900.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1300.0,
+     "to_room": 9,
+     "spawn": 4,
+     "exit": 47
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 6,
+   "kind": "town",
+   "chunk": [
+    -2,
+    -1
+   ],
+   "tiles": [
+    "THRF9FD",
+    "THRF9FE",
+    "THRF9FF",
+    "THRFAFD",
+    "THRFAFE",
+    "THRFAFF",
+    "THRFBFD",
+    "THRFBFE",
+    "THRFBFF"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    -60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 43278,
+   "collision_faces": 45198,
+   "tree_nodes": 16383,
+   "model_bytes": 1856896,
+   "collision_bytes": 1154336,
+   "dzr_bytes": 3072,
+   "reachable_m2": 8484.5,
+   "stalhounds": 7,
+   "guays": 4,
+   "spawns": 8,
+   "doors": [
+    {
+     "exit": 23,
+     "pos": [
+      4216.592790748874,
+      14.843799999999998,
+      -4739.1890877011865
+     ],
+     "yaw": 1024,
+     "to_room": 22,
+     "spawn": 2,
+     "wall_dist_cm": 343.8302786512838
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      1018.75,
+      27.506810590975565,
+      -5850.0
+     ],
+     "half_width_cm": 1243.75,
+     "to_room": 2,
+     "spawn": 4,
+     "exit": 40
+    },
+    {
+     "center": [
+      3406.25,
+      14.843799999999998,
+      -5850.0
+     ],
+     "half_width_cm": 1243.75,
+     "to_room": 2,
+     "spawn": 5,
+     "exit": 42
+    },
+    {
+     "center": [
+      -3425.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 11,
+     "spawn": 3,
+     "exit": 49
+    },
+    {
+     "center": [
+      -575.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 11,
+     "spawn": 4,
+     "exit": 51
+    },
+    {
+     "center": [
+      2275.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 11,
+     "spawn": 5,
+     "exit": 53
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 7,
+   "kind": "town",
+   "chunk": [
+    -1,
+    -1
+   ],
+   "tiles": [
+    "THRFCFE",
+    "THRFCFF",
+    "THRFDFD",
+    "THRFDFE",
+    "THRFDFF",
+    "THRFEFD",
+    "THRFEFE",
+    "THRFEFF"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    -60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 27336,
+   "collision_faces": 27413,
+   "tree_nodes": 8191,
+   "model_bytes": 1421600,
+   "collision_bytes": 664832,
+   "dzr_bytes": 2976,
+   "reachable_m2": 4648.9375,
+   "stalhounds": 4,
+   "guays": 2,
+   "spawns": 9,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -3800.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 550.0,
+     "to_room": 3,
+     "spawn": 4,
+     "exit": 46
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      -2000.0
+     ],
+     "half_width_cm": 1150.0,
+     "to_room": 8,
+     "spawn": 2,
+     "exit": 55
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 8,
+     "spawn": 3,
+     "exit": 57
+    },
+    {
+     "center": [
+      -4506.25,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 12,
+     "spawn": 4,
+     "exit": 59
+    },
+    {
+     "center": [
+      -1618.75,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 12,
+     "spawn": 5,
+     "exit": 61
+    },
+    {
+     "center": [
+      1268.75,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 12,
+     "spawn": 6,
+     "exit": 63
+    },
+    {
+     "center": [
+      4156.25,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 12,
+     "spawn": 7,
+     "exit": 65
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 8,
+   "kind": "town",
+   "chunk": [
+    0,
+    -1
+   ],
+   "tiles": [
+    "THR00FD",
+    "THR00FE",
+    "THR00FF",
+    "THR01FD",
+    "THR01FE",
+    "THR01FF",
+    "THRFFFD",
+    "THRFFFE",
+    "THRFFFF"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    -60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 28596,
+   "collision_faces": 30224,
+   "tree_nodes": 8191,
+   "model_bytes": 1477856,
+   "collision_bytes": 717792,
+   "dzr_bytes": 3104,
+   "reachable_m2": 5877.6875,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 10,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -2000.0
+     ],
+     "half_width_cm": 1150.0,
+     "to_room": 7,
+     "spawn": 3,
+     "exit": 56
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 7,
+     "spawn": 4,
+     "exit": 58
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      -2050.0
+     ],
+     "half_width_cm": 1200.0,
+     "to_room": 9,
+     "spawn": 5,
+     "exit": 67
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 9,
+     "spawn": 6,
+     "exit": 69
+    },
+    {
+     "center": [
+      -4465.625,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 9,
+     "exit": 71
+    },
+    {
+     "center": [
+      -1496.875,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 10,
+     "exit": 73
+    },
+    {
+     "center": [
+      1471.875,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 11,
+     "exit": 75
+    },
+    {
+     "center": [
+      4440.625,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 12,
+     "exit": 77
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 9,
+   "kind": "town",
+   "chunk": [
+    1,
+    -1
+   ],
+   "tiles": [
+    "THR02FD",
+    "THR02FE",
+    "THR02FF",
+    "THR03FD",
+    "THR03FE",
+    "THR03FF",
+    "THR04FD",
+    "THR04FE"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    -60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 32105,
+   "collision_faces": 32157,
+   "tree_nodes": 8191,
+   "model_bytes": 1446272,
+   "collision_bytes": 755904,
+   "dzr_bytes": 3200,
+   "reachable_m2": 5782.4375,
+   "stalhounds": 5,
+   "guays": 3,
+   "spawns": 12,
+   "doors": [
+    {
+     "exit": 19,
+     "pos": [
+      -5407.1562,
+      14.843799999999998,
+      -3400.0
+     ],
+     "yaw": 16384,
+     "to_room": 27,
+     "spawn": 2,
+     "wall_dist_cm": 10.156200000000354
+    },
+    {
+     "exit": 21,
+     "pos": [
+      -5407.1562,
+      14.843799999999998,
+      -3400.0
+     ],
+     "yaw": 16384,
+     "to_room": 23,
+     "spawn": 2,
+     "wall_dist_cm": 10.156200000000354
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      1900.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1300.0,
+     "to_room": 5,
+     "spawn": 2,
+     "exit": 48
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -2050.0
+     ],
+     "half_width_cm": 1200.0,
+     "to_room": 8,
+     "spawn": 4,
+     "exit": 68
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 8,
+     "spawn": 5,
+     "exit": 70
+    },
+    {
+     "center": [
+      1912.5,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1387.5,
+     "to_room": 13,
+     "spawn": 4,
+     "exit": 82
+    },
+    {
+     "center": [
+      4587.5,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1387.5,
+     "to_room": 13,
+     "spawn": 5,
+     "exit": 84
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 10,
+   "kind": "town",
+   "tiles": [
+    "THR05FD",
+    "THR05FE"
+   ],
+   "skipped": "not reachable"
+  },
+  {
+   "room": 11,
+   "kind": "town",
+   "chunk": [
+    -2,
+    0
+   ],
+   "tiles": [
+    "THRF900",
+    "THRF901",
+    "THRF902",
+    "THRFA00",
+    "THRFA01",
+    "THRFA02",
+    "THRFB00",
+    "THRFB01",
+    "THRFB02"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 37766,
+   "collision_faces": 37548,
+   "tree_nodes": 8191,
+   "model_bytes": 1651392,
+   "collision_bytes": 842560,
+   "dzr_bytes": 3136,
+   "reachable_m2": 7029.375,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 9,
+   "doors": [
+    {
+     "exit": 10,
+     "pos": [
+      -4790.329489009678,
+      0.0,
+      -451.81365418001667
+     ],
+     "yaw": 33792,
+     "to_room": 21,
+     "spawn": 3,
+     "wall_dist_cm": 101.66142756059887
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      -3425.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 6,
+     "spawn": 5,
+     "exit": 50
+    },
+    {
+     "center": [
+      -575.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 6,
+     "spawn": 6,
+     "exit": 52
+    },
+    {
+     "center": [
+      2275.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1475.0,
+     "to_room": 6,
+     "spawn": 7,
+     "exit": 54
+    },
+    {
+     "center": [
+      -4133.333333333331,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1516.6666666666672,
+     "to_room": 14,
+     "spawn": 2,
+     "exit": 86
+    },
+    {
+     "center": [
+      -1200.0,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1516.6666666666656,
+     "to_room": 14,
+     "spawn": 3,
+     "exit": 88
+    },
+    {
+     "center": [
+      1733.3333333333314,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1516.6666666666672,
+     "to_room": 14,
+     "spawn": 4,
+     "exit": 90
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 12,
+   "kind": "town",
+   "chunk": [
+    -1,
+    0
+   ],
+   "tiles": [
+    "THRFC00",
+    "THRFC01",
+    "THRFC02",
+    "THRFD00",
+    "THRFD01",
+    "THRFD02",
+    "THRFE00",
+    "THRFE01",
+    "THRFE02"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 39011,
+   "collision_faces": 38307,
+   "tree_nodes": 8191,
+   "model_bytes": 1673120,
+   "collision_bytes": 857600,
+   "dzr_bytes": 3488,
+   "reachable_m2": 7490.75,
+   "stalhounds": 6,
+   "guays": 4,
+   "spawns": 14,
+   "doors": [
+    {
+     "exit": 1,
+     "pos": [
+      -4299.122151420988,
+      0.0,
+      -1308.912946197225
+     ],
+     "yaw": 64512,
+     "to_room": 26,
+     "spawn": 2,
+     "wall_dist_cm": 11.95607213248647
+    },
+    {
+     "exit": 5,
+     "pos": [
+      4282.1562,
+      109.76559999999999,
+      -900.0
+     ],
+     "yaw": 49152,
+     "to_room": 19,
+     "spawn": 2,
+     "wall_dist_cm": 10.156200000000354
+    }
+   ],
+   "triggers": [
+    {
+     "center": [
+      -4506.25,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 7,
+     "spawn": 5,
+     "exit": 60
+    },
+    {
+     "center": [
+      -1618.75,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 7,
+     "spawn": 6,
+     "exit": 62
+    },
+    {
+     "center": [
+      1268.75,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 7,
+     "spawn": 7,
+     "exit": 64
+    },
+    {
+     "center": [
+      4156.25,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1493.75,
+     "to_room": 7,
+     "spawn": 8,
+     "exit": 66
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 0,
+     "spawn": 13,
+     "exit": 92
+    },
+    {
+     "center": [
+      -5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 0,
+     "spawn": 14,
+     "exit": 94
+    },
+    {
+     "center": [
+      -4609.375,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 15,
+     "spawn": 2,
+     "exit": 96
+    },
+    {
+     "center": [
+      -1928.125,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 15,
+     "spawn": 3,
+     "exit": 98
+    },
+    {
+     "center": [
+      753.125,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 15,
+     "spawn": 4,
+     "exit": 100
+    },
+    {
+     "center": [
+      3434.375,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 15,
+     "spawn": 5,
+     "exit": 102
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 13,
+   "kind": "town",
+   "chunk": [
+    1,
+    0
+   ],
+   "tiles": [
+    "THR0200",
+    "THR0201",
+    "THR0202",
+    "THR0300",
+    "THR0301",
+    "THR0302",
+    "THR0402"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    60.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 27713,
+   "collision_faces": 27244,
+   "tree_nodes": 8191,
+   "model_bytes": 1359008,
+   "collision_bytes": 659104,
+   "dzr_bytes": 3136,
+   "reachable_m2": 5532.125,
+   "stalhounds": 4,
+   "guays": 3,
+   "spawns": 11,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 0,
+     "spawn": 3,
+     "exit": 26
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      5412.5
+     ],
+     "half_width_cm": 562.5,
+     "to_room": 0,
+     "spawn": 4,
+     "exit": 28
+    },
+    {
+     "center": [
+      1912.5,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1387.5,
+     "to_room": 9,
+     "spawn": 10,
+     "exit": 83
+    },
+    {
+     "center": [
+      4587.5,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1387.5,
+     "to_room": 9,
+     "spawn": 11,
+     "exit": 85
+    },
+    {
+     "center": [
+      -5275.0,
+      -262.5691338728525,
+      5850.0
+     ],
+     "half_width_cm": 400.0,
+     "to_room": 17,
+     "spawn": 2,
+     "exit": 104
+    },
+    {
+     "center": [
+      -3503.125,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 17,
+     "spawn": 3,
+     "exit": 106
+    },
+    {
+     "center": [
+      -809.375,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 17,
+     "spawn": 4,
+     "exit": 108
+    },
+    {
+     "center": [
+      1884.375,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 17,
+     "spawn": 5,
+     "exit": 110
+    },
+    {
+     "center": [
+      4578.125,
+      0.0,
+      5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 17,
+     "spawn": 6,
+     "exit": 112
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 14,
+   "kind": "town",
+   "chunk": [
+    -2,
+    1
+   ],
+   "tiles": [
+    "THRF903",
+    "THRFA03",
+    "THRFB03"
+   ],
+   "origin_m": [
+    220.0,
+    0.0,
+    180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 12474,
+   "collision_faces": 12557,
+   "tree_nodes": 4095,
+   "model_bytes": 772192,
+   "collision_bytes": 312896,
+   "dzr_bytes": 2592,
+   "reachable_m2": 2111.6875,
+   "stalhounds": 2,
+   "guays": 1,
+   "spawns": 5,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -4133.333333333331,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1516.6666666666672,
+     "to_room": 11,
+     "spawn": 6,
+     "exit": 87
+    },
+    {
+     "center": [
+      -1200.0,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1516.6666666666656,
+     "to_room": 11,
+     "spawn": 7,
+     "exit": 89
+    },
+    {
+     "center": [
+      1733.3333333333314,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1516.6666666666672,
+     "to_room": 11,
+     "spawn": 8,
+     "exit": 91
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 15,
+   "kind": "town",
+   "chunk": [
+    -1,
+    1
+   ],
+   "tiles": [
+    "THRFC03",
+    "THRFD03",
+    "THRFE03"
+   ],
+   "origin_m": [
+    100.0,
+    0.0,
+    180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 9192,
+   "collision_faces": 9099,
+   "tree_nodes": 2047,
+   "model_bytes": 641824,
+   "collision_bytes": 204736,
+   "dzr_bytes": 2624,
+   "reachable_m2": 1451.25,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 7,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -4609.375,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 12,
+     "spawn": 10,
+     "exit": 97
+    },
+    {
+     "center": [
+      -1928.125,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 12,
+     "spawn": 11,
+     "exit": 99
+    },
+    {
+     "center": [
+      753.125,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 12,
+     "spawn": 12,
+     "exit": 101
+    },
+    {
+     "center": [
+      3434.375,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1390.625,
+     "to_room": 12,
+     "spawn": 13,
+     "exit": 103
+    },
+    {
+     "center": [
+      -5850.0,
+      -2.21448907245908,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 16,
+     "spawn": 6,
+     "exit": 114
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 16,
+   "kind": "town",
+   "chunk": [
+    0,
+    1
+   ],
+   "tiles": [
+    "THR0003",
+    "THR0004",
+    "THR0103",
+    "THRFF03",
+    "THRFF04"
+   ],
+   "origin_m": [
+    -20.0,
+    0.0,
+    180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 19657,
+   "collision_faces": 20030,
+   "tree_nodes": 4095,
+   "model_bytes": 1007616,
+   "collision_bytes": 443776,
+   "dzr_bytes": 2880,
+   "reachable_m2": 4563.8125,
+   "stalhounds": 4,
+   "guays": 2,
+   "spawns": 8,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -4465.625,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 5,
+     "exit": 30
+    },
+    {
+     "center": [
+      -1496.875,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 6,
+     "exit": 32
+    },
+    {
+     "center": [
+      1471.875,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 7,
+     "exit": 34
+    },
+    {
+     "center": [
+      4440.625,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1534.375,
+     "to_room": 0,
+     "spawn": 8,
+     "exit": 36
+    },
+    {
+     "center": [
+      5850.0,
+      0.0,
+      -5425.0
+     ],
+     "half_width_cm": 575.0,
+     "to_room": 15,
+     "spawn": 6,
+     "exit": 115
+    },
+    {
+     "center": [
+      -5850.0,
+      35.50322608024206,
+      -4887.5
+     ],
+     "half_width_cm": 1112.5,
+     "to_room": 17,
+     "spawn": 7,
+     "exit": 116
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 17,
+   "kind": "town",
+   "chunk": [
+    1,
+    1
+   ],
+   "tiles": [
+    "THR0203",
+    "THR0303",
+    "THR0403"
+   ],
+   "origin_m": [
+    -140.0,
+    0.0,
+    180.0
+   ],
+   "grid_cm": [
+    -6000.0,
+    6000.0,
+    -6000.0,
+    6000.0
+   ],
+   "triangles": 9378,
+   "collision_faces": 9721,
+   "tree_nodes": 2047,
+   "model_bytes": 643936,
+   "collision_bytes": 217312,
+   "dzr_bytes": 2720,
+   "reachable_m2": 1793.1875,
+   "stalhounds": 1,
+   "guays": 0,
+   "spawns": 8,
+   "doors": [],
+   "triggers": [
+    {
+     "center": [
+      -5275.0,
+      -262.5691338728525,
+      -5850.0
+     ],
+     "half_width_cm": 400.0,
+     "to_room": 13,
+     "spawn": 6,
+     "exit": 105
+    },
+    {
+     "center": [
+      -3503.125,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 13,
+     "spawn": 7,
+     "exit": 107
+    },
+    {
+     "center": [
+      -809.375,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 13,
+     "spawn": 8,
+     "exit": 109
+    },
+    {
+     "center": [
+      1884.375,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 13,
+     "spawn": 9,
+     "exit": 111
+    },
+    {
+     "center": [
+      4578.125,
+      0.0,
+      -5850.0
+     ],
+     "half_width_cm": 1396.875,
+     "to_room": 13,
+     "spawn": 10,
+     "exit": 113
+    },
+    {
+     "center": [
+      5850.0,
+      14.843799999999998,
+      -4887.5
+     ],
+     "half_width_cm": 1112.5,
+     "to_room": 16,
+     "spawn": 7,
+     "exit": 117
+    }
+   ],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 18,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0109"
+   ],
+   "origin_m": [
+    -57.925781,
+    0.0,
+    378.95117200000004
+   ],
+   "grid_cm": [
+    -1242.5781000000002,
+    1242.5781000000002,
+    -1750.1952999999985,
+    1750.1952999999985
+   ],
+   "triangles": 2405,
+   "collision_faces": 2521,
+   "tree_nodes": 511,
+   "model_bytes": 315072,
+   "collision_bytes": 57664,
+   "dzr_bytes": 2496,
+   "reachable_m2": 91.25,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 4,
+   "doors": [
+    {
+     "exit": 13,
+     "pos": [
+      -724.3437999999999,
+      14.843799999999998,
+      -150.1952999999985
+     ],
+     "yaw": 16384,
+     "to_room": 20,
+     "spawn": 2,
+     "wall_dist_cm": 9.765699999999697
+    },
+    {
+     "exit": 17,
+     "pos": [
+      189.57810000000006,
+      0.0,
+      299.8047000000015
+     ],
+     "yaw": 49152,
+     "to_room": 2,
+     "spawn": 2,
+     "wall_dist_cm": 10.15620000000024
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 19,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0205",
+    "THR0305"
+   ],
+   "origin_m": [
+    -119.7246095,
+    0.0,
+    219.3125
+   ],
+   "grid_cm": [
+    -1032.61715,
+    1032.61715,
+    -583.9843999999999,
+    583.9843999999999
+   ],
+   "triangles": 3860,
+   "collision_faces": 3904,
+   "tree_nodes": 1023,
+   "model_bytes": 209376,
+   "collision_bytes": 91296,
+   "dzr_bytes": 2496,
+   "reachable_m2": 72.6875,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 4,
+   "doors": [
+    {
+     "exit": 6,
+     "pos": [
+      -782.61715,
+      0.0,
+      -278.25
+     ],
+     "yaw": 0,
+     "to_room": 12,
+     "spawn": 3,
+     "wall_dist_cm": 47.26560000000006
+    },
+    {
+     "exit": 7,
+     "pos": [
+      779.61715,
+      0.0,
+      -283.98439999999994
+     ],
+     "yaw": 49152,
+     "to_room": 21,
+     "spawn": 2,
+     "wall_dist_cm": 15.234300000000076
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 20,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0207",
+    "THR0307"
+   ],
+   "origin_m": [
+    -119.7265625,
+    0.0,
+    299.306641
+   ],
+   "grid_cm": [
+    -1032.4218500000002,
+    1032.4218500000002,
+    -584.5703000000015,
+    584.5703000000015
+   ],
+   "triangles": 3809,
+   "collision_faces": 3853,
+   "tree_nodes": 1023,
+   "model_bytes": 274560,
+   "collision_bytes": 89632,
+   "dzr_bytes": 2496,
+   "reachable_m2": 74.25,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 4,
+   "doors": [
+    {
+     "exit": 14,
+     "pos": [
+      779.4218500000001,
+      0.0,
+      -284.57030000000145
+     ],
+     "yaw": 49152,
+     "to_room": 18,
+     "spawn": 2,
+     "wall_dist_cm": 14.84370000000024
+    },
+    {
+     "exit": 16,
+     "pos": [
+      -778.1760583729244,
+      0.0,
+      -277.6785458199847
+     ],
+     "yaw": 64512,
+     "to_room": 3,
+     "spawn": 2,
+     "wall_dist_cm": 46.3168281873991
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 21,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0309"
+   ],
+   "origin_m": [
+    -139.50976550000001,
+    0.0,
+    378.4609375
+   ],
+   "grid_cm": [
+    -1400.97655,
+    1400.97655,
+    -1801.1718499999972,
+    1801.1718499999972
+   ],
+   "triangles": 2510,
+   "collision_faces": 2910,
+   "tree_nodes": 1023,
+   "model_bytes": 316704,
+   "collision_bytes": 74912,
+   "dzr_bytes": 2496,
+   "reachable_m2": 262.0625,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 4,
+   "doors": [
+    {
+     "exit": 8,
+     "pos": [
+      -865.9453499999985,
+      14.843799999999998,
+      -201.17184999999722
+     ],
+     "yaw": 16384,
+     "to_room": 19,
+     "spawn": 3,
+     "wall_dist_cm": 17.968799999998396
+    },
+    {
+     "exit": 9,
+     "pos": [
+      347.97655000000145,
+      0.0,
+      398.8281500000028
+     ],
+     "yaw": 49152,
+     "to_room": 11,
+     "spawn": 2,
+     "wall_dist_cm": 1.9531000000015413
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 22,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0505"
+   ],
+   "origin_m": [
+    -219.0,
+    0.0,
+    220.738281
+   ],
+   "grid_cm": [
+    -1550.0,
+    1550.0,
+    -1826.1718999999998,
+    1826.1718999999998
+   ],
+   "triangles": 4020,
+   "collision_faces": 5210,
+   "tree_nodes": 1203,
+   "model_bytes": 510784,
+   "collision_bytes": 121536,
+   "dzr_bytes": 2400,
+   "reachable_m2": 607.625,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [
+    {
+     "exit": 24,
+     "pos": [
+      150.0,
+      14.843799999999998,
+      -476.82810000000006
+     ],
+     "yaw": 32768,
+     "to_room": 6,
+     "spawn": 2,
+     "wall_dist_cm": 2.34379999999976
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 23,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THR0508"
+   ],
+   "origin_m": [
+    -236.4765625,
+    0.0,
+    346.361328
+   ],
+   "grid_cm": [
+    -492.57814999999994,
+    492.57814999999994,
+    -425.9766000000013,
+    425.9766000000013
+   ],
+   "triangles": 3409,
+   "collision_faces": 3439,
+   "tree_nodes": 1023,
+   "model_bytes": 201344,
+   "collision_bytes": 84512,
+   "dzr_bytes": 2400,
+   "reachable_m2": 16.75,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [
+    {
+     "exit": 22,
+     "pos": [
+      239.57814999999994,
+      0.0,
+      -25.976600000001326
+     ],
+     "yaw": 49152,
+     "to_room": 9,
+     "spawn": 3,
+     "wall_dist_cm": 10.156299999999874
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 24,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THRFB07"
+   ],
+   "origin_m": [
+    187.84960949999999,
+    0.0,
+    301.48828100000003
+   ],
+   "grid_cm": [
+    -584.9609499999999,
+    584.9609499999999,
+    -1151.1718999999998,
+    1151.1718999999998
+   ],
+   "triangles": 1789,
+   "collision_faces": 1887,
+   "tree_nodes": 511,
+   "model_bytes": 301024,
+   "collision_bytes": 43840,
+   "dzr_bytes": 2400,
+   "reachable_m2": 45.3125,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [
+    {
+     "exit": 4,
+     "pos": [
+      215.0390500000001,
+      0.0,
+      248.1718999999971
+     ],
+     "yaw": 32768,
+     "to_room": 26,
+     "spawn": 3,
+     "wall_dist_cm": 2.343799999996918
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 25,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THRFB09"
+   ],
+   "origin_m": [
+    185.59960949999999,
+    0.0,
+    383.48828100000003
+   ],
+   "grid_cm": [
+    -1490.03905,
+    1490.03905,
+    -1801.1718999999998,
+    1801.1718999999998
+   ],
+   "triangles": 2569,
+   "collision_faces": 2848,
+   "tree_nodes": 1023,
+   "model_bytes": 382528,
+   "collision_bytes": 71520,
+   "dzr_bytes": 2400,
+   "reachable_m2": 314.8125,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [
+    {
+     "exit": 12,
+     "pos": [
+      235.0064658290478,
+      0.0,
+      198.83258291787806
+     ],
+     "yaw": 48128,
+     "to_room": 0,
+     "spawn": 2,
+     "wall_dist_cm": 3.0457360606810138
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 26,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THRFD05",
+    "THRFD06"
+   ],
+   "origin_m": [
+    100.5253905,
+    0.0,
+    240.0
+   ],
+   "grid_cm": [
+    -1317.38285,
+    1317.38285,
+    -2652.3437999999996,
+    2652.3437999999996
+   ],
+   "triangles": 5467,
+   "collision_faces": 5967,
+   "tree_nodes": 2047,
+   "model_bytes": 636192,
+   "collision_bytes": 146720,
+   "dzr_bytes": 2496,
+   "reachable_m2": 316.75,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 4,
+   "doors": [
+    {
+     "exit": 2,
+     "pos": [
+      -375.19160035514153,
+      0.0,
+      700.8906903022857
+     ],
+     "yaw": 20480,
+     "to_room": 12,
+     "spawn": 2,
+     "wall_dist_cm": 11.452130478435722
+    },
+    {
+     "exit": 3,
+     "pos": [
+      957.9912958597348,
+      0.0,
+      -1576.1104063947505
+     ],
+     "yaw": 35840,
+     "to_room": 24,
+     "spawn": 2,
+     "wall_dist_cm": 4.288892900836198
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  },
+  {
+   "room": 27,
+   "kind": "interior",
+   "chunk": [],
+   "tiles": [
+    "THRFE08"
+   ],
+   "origin_m": [
+    43.5,
+    0.0,
+    346.0
+   ],
+   "grid_cm": [
+    -537.5,
+    537.5,
+    -437.5,
+    437.5
+   ],
+   "triangles": 2987,
+   "collision_faces": 2763,
+   "tree_nodes": 917,
+   "model_bytes": 227232,
+   "collision_bytes": 69888,
+   "dzr_bytes": 2400,
+   "reachable_m2": 21.1875,
+   "stalhounds": 0,
+   "guays": 0,
+   "spawns": 3,
+   "doors": [
+    {
+     "exit": 20,
+     "pos": [
+      241.92189999999994,
+      275.0,
+      12.5
+     ],
+     "yaw": 49152,
+     "to_room": 9,
+     "spawn": 2,
+     "wall_dist_cm": 7.421899999999936
+    }
+   ],
+   "triggers": [],
+   "open_drop_edges_after": 0
+  }
+ ],
+ "doors": [
+  {
+   "sh_event": 48,
+   "from_tile": "THRFE01",
+   "to_tile": "THRFD06",
+   "from_room": 12,
+   "to_room": 26,
+   "exit": 1,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 49,
+   "from_tile": "THRFD06",
+   "to_tile": "THRFE01",
+   "from_room": 26,
+   "to_room": 12,
+   "exit": 2,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 50,
+   "from_tile": "THRFD05",
+   "to_tile": "THRFB07",
+   "from_room": 26,
+   "to_room": 24,
+   "exit": 3,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 51,
+   "from_tile": "THRFB07",
+   "to_tile": "THRFD05",
+   "from_room": 24,
+   "to_room": 26,
+   "exit": 4,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 66,
+   "from_tile": "THRFC01",
+   "to_tile": "THR0305",
+   "from_room": 12,
+   "to_room": 19,
+   "exit": 5,
+   "sh_flag": "EventFlag_153"
+  },
+  {
+   "sh_event": 67,
+   "from_tile": "THR0305",
+   "to_tile": "THRFC01",
+   "from_room": 19,
+   "to_room": 12,
+   "exit": 6,
+   "sh_flag": "EventFlag_153"
+  },
+  {
+   "sh_event": 69,
+   "from_tile": "THR0205",
+   "to_tile": "THR0309",
+   "from_room": 19,
+   "to_room": 21,
+   "exit": 7,
+   "sh_flag": "EventFlag_159"
+  },
+  {
+   "sh_event": 70,
+   "from_tile": "THR0309",
+   "to_tile": "THR0205",
+   "from_room": 21,
+   "to_room": 19,
+   "exit": 8,
+   "sh_flag": "EventFlag_159"
+  },
+  {
+   "sh_event": 79,
+   "from_tile": "THR0309",
+   "to_tile": "THRFB01",
+   "from_room": 21,
+   "to_room": 11,
+   "exit": 9,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 80,
+   "from_tile": "THRFB01",
+   "to_tile": "THR0309",
+   "from_room": 11,
+   "to_room": 21,
+   "exit": 10,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 87,
+   "from_tile": "THR0101",
+   "to_tile": "THRFB09",
+   "from_room": 0,
+   "to_room": 25,
+   "exit": 11,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 89,
+   "from_tile": "THRFB09",
+   "to_tile": "THR0101",
+   "from_room": 25,
+   "to_room": 0,
+   "exit": 12,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 92,
+   "from_tile": "THR0109",
+   "to_tile": "THR0207",
+   "from_room": 18,
+   "to_room": 20,
+   "exit": 13,
+   "sh_flag": "EventFlag_MapMark_OldTown_KGordonArrowsOnly"
+  },
+  {
+   "sh_event": 93,
+   "from_tile": "THR0207",
+   "to_tile": "THR0109",
+   "from_room": 20,
+   "to_room": 18,
+   "exit": 14,
+   "sh_flag": "EventFlag_MapMark_OldTown_KGordonArrowsOnly"
+  },
+  {
+   "sh_event": 97,
+   "from_tile": "THRFCFC",
+   "to_tile": "THR0307",
+   "from_room": 3,
+   "to_room": 20,
+   "exit": 15,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 98,
+   "from_tile": "THR0307",
+   "to_tile": "THRFCFC",
+   "from_room": 20,
+   "to_room": 3,
+   "exit": 16,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 99,
+   "from_tile": "THR0109",
+   "to_tile": "THRFBFC",
+   "from_room": 18,
+   "to_room": 2,
+   "exit": 17,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 100,
+   "from_tile": "THRFBFC",
+   "to_tile": "THR0109",
+   "from_room": 2,
+   "to_room": 18,
+   "exit": 18,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 119,
+   "from_tile": "THR04FD",
+   "to_tile": "THRFE08",
+   "from_room": 9,
+   "to_room": 27,
+   "exit": 19,
+   "sh_flag": "EventFlag_163"
+  },
+  {
+   "sh_event": 120,
+   "from_tile": "THRFE08",
+   "to_tile": "THR04FD",
+   "from_room": 27,
+   "to_room": 9,
+   "exit": 20,
+   "sh_flag": "EventFlag_163"
+  },
+  {
+   "sh_event": 121,
+   "from_tile": "THR04FD",
+   "to_tile": "THR0508",
+   "from_room": 9,
+   "to_room": 23,
+   "exit": 21,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 122,
+   "from_tile": "THR0508",
+   "to_tile": "THR04FD",
+   "from_room": 23,
+   "to_room": 9,
+   "exit": 22,
+   "sh_flag": null
+  },
+  {
+   "sh_event": 131,
+   "from_tile": "THRF9FD",
+   "to_tile": "THR0505",
+   "from_room": 6,
+   "to_room": 22,
+   "exit": 23,
+   "sh_flag": "EventFlag_169"
+  },
+  {
+   "sh_event": 132,
+   "from_tile": "THR0505",
+   "to_tile": "THRF9FD",
+   "from_room": 22,
+   "to_room": 6,
+   "exit": 24,
+   "sh_flag": "EventFlag_170"
+  }
+ ],
+ "exit_count": 118,
+ "links": 117
+}

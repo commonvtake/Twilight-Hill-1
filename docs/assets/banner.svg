@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-label="Twilight Hill - Silent Hill rebuilt inside the Twilight Princess engine">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1013"/>
+      <stop offset="0.55" stop-color="#1b2125"/>
+      <stop offset="1" stop-color="#2a3033"/>
+    </linearGradient>
+    <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa29f" stop-opacity="0"/>
+      <stop offset="0.6" stop-color="#9aa29f" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c3c8c5" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#c9a227" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="360" fill="url(#sky)"/>
+  <!-- street grid receding into fog (original motif) -->
+  <g stroke="#59605f" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M640 210 L-40 360"/><path d="M640 210 L170 360"/><path d="M640 210 L420 360"/>
+    <path d="M640 210 L860 360"/><path d="M640 210 L1110 360"/><path d="M640 210 L1320 360"/>
+    <path d="M300 286 H980"/><path d="M200 314 H1080"/><path d="M60 350 H1220"/>
+  </g>
+  <!-- distant block silhouettes -->
+  <g fill="#3a4143" opacity="0.8">
+    <rect x="120" y="150" width="70" height="70"/><rect x="200" y="128" width="54" height="92"/>
+    <rect x="262" y="168" width="88" height="52"/><rect x="930" y="140" width="64" height="80"/>
+    <rect x="1002" y="118" width="48" height="102"/><rect x="1058" y="160" width="92" height="60"/>
+  </g>
+  <rect y="200" width="1280" height="160" fill="url(#fog)"/>
+  <ellipse cx="640" cy="300" rx="560" ry="60" fill="#d9ddda" opacity="0.18" filter="url(#soft)"/>
+  <!-- title -->
+  <text x="640" y="150" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="78" letter-spacing="14" fill="#e8e6df">TWILIGHT HILL</text>
+  <rect x="440" y="172" width="400" height="2" fill="url(#glow)"/>
+  <text x="640" y="212" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" letter-spacing="2" fill="#c9cdca">Silent Hill (1999) rebuilt inside the Twilight Princess engine</text>
+  <text x="640" y="246" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" letter-spacing="3" fill="#b9c0bd">C++20 NATIVE MOD  ·  PYTHON CONVERSION PIPELINE  ·  DUSKLIGHT</text>
+</svg>

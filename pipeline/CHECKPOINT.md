@@ -1,3 +1,31 @@
+# Old Silent Hill interiors + playtest fixes 0.8.0 - 2026-11-10
+
+User 0.7.0 test (dusklight-20261006-193637.log): crash after long play with SafeStringCopy
+"Destination buffer too small"; no sword/guard; item ring cannot select/equip.
+
+Causes: (1) dStage_changeScene with room -1 (Link between rooms) reads the STAGE SCLS, which had
+one entry, so exit indices >0 read past the table -> garbage stage name. (2) Cafe template STAG
+ST type = 2 (ST_ROOM): daAlink_c::checkNotBattleStage() = checkRoom()||checkCastleTown() blocks
+cut (d_a_alink_cut.inc), guard (d_a_alink_guard.inc) and checkCastleTownUseItem.
+
+Fixes: one global exit table (exit 0 = cafe, 1..62 doors, then street portals <=255) written as
+SCLS of the stage and every room. patch_stag(): STAG field_0x0c ST type -> ST_FIELD, field_0x0a
+UpButton -> 2 (map off), applied to cafe stage.dzs and D_SB01. Silent Hill Core 0.8.0:
+replace-hook on SafeStringCopy truncates + logs "crash guard" (20 lines max, recursion guard).
+
+Interiors (tools/build_oldtown.py, tools/sh_doors.py): SH decomp src/maps/map2_s00 map points
+(Q12 m, heading Q8) + SysState_LoadRoom events = doors (28 events, 24 after dedupe). Interior
+clusters = touching THR tiles with y>=5 referenced by doors, room bounds = bbox +-1.5 m. kdoor
+3 cm off the wall found by 64-ray Moller-Trumbore, exit in param bits 25..30; supported crossing
+quads as 0.3.1; scnChg fallback 305 cm behind the door. Arrival = SH destination point pushed up
+to 1.5 m from its wall; arrivals landing on a return door are moved 90-160 cm in front of it.
+district_coverage wall filter is relative to the floor median (raised interiors such as FE08).
+SH story flags ignored (all doors open). Rooms not reachable from room 0 are dropped (room 10).
+Validation adds: shared SCLS everywhere, kdoor exits <=62 resolve with reachable floor 1 m in
+front, all rooms reachable, STAG ST_FIELD. NOT runtime-tested.
+
+Previous checkpoint:
+
 # Old Silent Hill town + gameplay fixes 0.7.0 - 2026-10-06
 
 User 0.6.0 test: cafe door round trip confirmed working; district loaded (logs show

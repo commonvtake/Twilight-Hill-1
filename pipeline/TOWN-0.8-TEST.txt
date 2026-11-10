@@ -1,0 +1,48 @@
+SILENT HILL / TWILIGHT PRINCESS - 0.8.0 OLD SILENT HILL + INTERIORS
+
+This is not the complete Silent Hill campaign (about 22% of the full game is built).
+
+WHAT'S NEW
+- Buildings: 10 interiors of Old Silent Hill behind 24 working doors, placed
+  where Silent Hill's own doors are. Walk up to a door and press A to open it.
+  The west side of town is now reached through buildings, as in the original
+  game. All doors are unlocked for now (story keys are not built yet).
+- Fixes from your 0.7 test:
+    * Crash after playing a while ("Destination buffer too small"): exits
+      between areas were read from the wrong table while Link was between
+      areas. Every area now shares one exit table, and a crash guard writes a
+      log line instead of closing the game.
+    * Sword, shield and blocking did not work: the Silent Hill areas were
+      flagged as an indoor "no fighting" area (inherited from the cafe
+      template). They are now flagged as a field, like Hyrule Field.
+    * Item ring could not select or equip: same cause, same fix.
+- The map button is off in Silent Hill areas (there is no Zelda map for them).
+
+CONTROLS (Xbox controller, Dusklight default layout)
+  Move ................ left stick          Camera ...... right stick
+  Jump ................ LB                  keyboard: Space
+  Dodge roll .......... RB (any direction)  Roll ........ A while running
+  Sword ............... X                   Shield ...... hold right trigger
+  Lock on ............. left trigger        Open door ... A
+  Side hop / backflip . hold lock-on, A + left/right/back
+  Lantern ............. B                   Bow ......... Y
+  Items / potions ..... D-pad (item ring)
+  Pause screen ........ Start   (Options = Dusklight display/graphics settings)
+
+UPDATE AND RUN
+1. Close the game. Extract the ZIP and copy the contents of
+   SilentHill-TwilightPrincess-Test over your test folder (allow replacement).
+2. Double-click Launch-Silent-Hill.cmd.
+3. If graphics initialization fails, use Launch-Silent-Hill-D3D11.cmd.
+
+TEST THIS BUILD
+- Swing the sword, block with the shield, and equip items from the item ring.
+- Enter every building you can find and come back out. Note any door that
+  does not open, drops you somewhere wrong, or leaves you stuck.
+- Play for a long session crossing many areas (the old crash case).
+- If anything fails, close the game and run Open-Silent-Hill-Logs.cmd.
+  Send the newest log plus what happened and where you were.
+  Lines starting with "crash guard" in the log are especially useful.
+
+OTHER LAUNCHERS
+Launch-District-Only.cmd: the single-area district with enemies (fallback).

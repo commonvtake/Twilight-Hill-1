@@ -1,4 +1,4 @@
-"""Static validation of the packaged Old Silent Hill stage (0.7.0). Writes town/town_map.png.
+"""Static validation of the packaged Old Silent Hill stage (0.8.0). Writes town/town_map.png and town/town_map_layers.npz.
 
 Per room: model parses (C8/RGB5A3 textures), DZB parses with the right room index, room archive
 fits the memory budget, spawn ids unique, every spawn on reachable floor; every scnChg trigger
@@ -73,11 +73,46 @@ def box_contains(t, x, y, z_):
     return abs(lx) <= t[9] / 10 * 75 and abs(lz) <= t[11] / 10 * 75 and 0 <= y - py <= t[10] / 10 * 150
 
 
+town = json.loads((P / 'town/town_report.json').read_text())
+grid_of = {x['room']: tuple(x['grid_cm']) for x in town['rooms'] if 'skipped' not in x}
+global_exits = rooms[0]['scls']
 graph = {r: set() for r in rooms}
 covs = {}
+door_count = 0
+
+
+def resolve_exit(r, ex):
+    assert ex < len(global_exits), f'room {r}: exit {ex} outside the exit table'
+    dest = global_exits[ex]; stage = dest[0].rstrip(b'\0').decode(); spawn, droom = dest[1], dest[2]
+    if stage != STAGE:
+        assert stage == 'R_SP108' and ex == 0, f'room {r}: unexpected exit stage {stage}'
+        return None
+    assert droom in rooms, f'room {r}: exit to missing room {droom}'
+    target = [p for p in rooms[droom]['plyr'] if (p[7] & 0xFF) == spawn]
+    assert target, f'room {r}: exit to room {droom} missing spawn {spawn}'
+    for t2 in rooms[droom]['tgsc']:
+        assert not box_contains(t2, target[0][2], target[0][3], target[0][4]), f'room {droom}: arrival {spawn} inside a trigger'
+    return droom
+
+
+door_exits_of = {}
 for r, R in rooms.items():
+    assert R['scls'] == global_exits, f'room {r}: exit table differs from the shared table'
     seeds = [(p[2], p[4]) for p in R['plyr']]
-    cov = analyse(R['V'], R['F'], seeds, bounds=(-HALF, HALF, -HALF, HALF)); covs[r] = cov
+    cov = analyse(R['V'], R['F'], seeds, bounds=grid_of[r]); covs[r] = cov
+    door_exits = set(); door_exits_of[r] = door_exits
+    for a in R['actr']:
+        if a[0].rstrip(b'\0') == b'kdoor':
+            ex = (a[1] >> 25) & 0x3F; door_exits.add(ex); door_count += 1
+            assert ex <= 62, f'room {r}: door exit {ex} does not fit the 6-bit kdoor field'
+            droom = resolve_exit(r, ex)
+            # Link stands on the street/room side (door local +Z) to open it
+            yaw = a[6] * math.pi / 32768
+            fx, fz = a[2] + math.sin(yaw) * 100, a[4] + math.cos(yaw) * 100
+            rc = cov['cell'](fx, fz)
+            assert cov['reach'][rc], f'room {r}: no reachable floor in front of door exit {ex}'
+            if droom is not None:
+                graph[r].add(droom)
     H, reach, cell = cov['H'], cov['reach'], cov['cell']
     assert not cov['drops'], f'room {r}: {len(cov["drops"])} open drops'
     for p in R['plyr']:
@@ -86,17 +121,10 @@ for r, R in rooms.items():
     for t in R['tgsc']:
         if t[0].rstrip(b'\0') != b'scnChg': continue
         ex = t[1] & 0xFF
-        assert ex < len(R['scls']), f'room {r}: trigger exit {ex} missing'
-        dest = R['scls'][ex]; stage = dest[0].rstrip(b'\0').decode(); spawn, droom = dest[1], dest[2]
-        if stage != STAGE:
-            assert stage == 'R_SP108' and r == 0, f'room {r}: unexpected exit stage {stage}'
-            continue
-        assert droom in rooms, f'room {r}: exit to missing room {droom}'
-        target = [p for p in rooms[droom]['plyr'] if (p[7] & 0xFF) == spawn]
-        assert target, f'room {r}: exit to room {droom} missing spawn {spawn}'
-        tp = target[0]
-        for t2 in rooms[droom]['tgsc']:
-            assert not box_contains(t2, tp[2], tp[3], tp[4]), f'room {droom}: arrival {spawn} inside a trigger'
+        droom = resolve_exit(r, ex)
+        if ex in door_exits or droom is None:
+            continue   # door fallback trigger sits behind its door, inside the wall
+        assert ex <= 255, f'room {r}: street portal exit {ex} does not fit scnChg arg0'
         # trigger overlaps reachable floor (sample its footprint)
         yaw = t[6] * math.pi / 32768; c, s = math.cos(yaw), math.sin(yaw)
         hw, hd = t[9] / 10 * 75, t[11] / 10 * 75; hit = False
@@ -119,6 +147,8 @@ while q:
     for v in graph[u]:
         if v not in seen: seen.add(v); q.append(v)
 rep['unreachable_rooms'] = sorted(set(rooms) - seen)
+assert not rep['unreachable_rooms'], f"unreachable rooms {rep['unreachable_rooms']}"
+rep['doors'] = door_count
 for u in graph:
     for v in graph[u]:
         assert u in graph[v], f'one-way connection {u}->{v}'
@@ -134,7 +164,10 @@ for r in range(N):
     assert num == 1 and dzs[lp] & 0x3F == r and dzs[lp] & 0x80, f'RTBL entry {r}'
 for tag in (b'Env0', b'Enve'):
     assert t[tag][0] == N, f'{tag} count'
-sc = rows(dzs, b'SCLS', 13); assert len(sc) == 1 and sc[0][:8] == b'R_SP108\0'
+sc = [struct.unpack('>8s5B', x) for x in rows(dzs, b'SCLS', 13)]
+assert sc == global_exits, 'stage exit table differs from the rooms'
+stag = rows(dzs, b'STAG', 0x3C)[0]
+assert (struct.unpack_from('>I', stag, 0x0c)[0] >> 16) & 7 == 0, 'stage type is not ST_FIELD'
 for arcname, inner in (('R00_00.arc', 'room.dzr'), ('STG_00.arc', 'stage.dzs')):
     a = RARC(BytesIO(z.read(f'overlay/res/Stage/R_SP108/{arcname}'))); a.read()
     d = a.get_file_entry(inner).data.getvalue()
@@ -143,25 +176,34 @@ for arcname, inner in (('R00_00.arc', 'room.dzr'), ('STG_00.arc', 'stage.dzs')):
 
 # overview map
 town = json.loads((P / 'town/town_report.json').read_text())
-chunk_of_room = {r['room']: tuple(r['chunk']) for r in town['rooms'] if 'skipped' not in r}
+chunk_of_room = {r['room']: tuple(r['chunk']) for r in town['rooms'] if 'skipped' not in r and r.get('kind', 'town') == 'town'}
 cxs = [c[0] for c in chunk_of_room.values()]; cys = [c[1] for c in chunk_of_room.values()]
 cell_px = int(2 * HALF / STEP)
 W = (max(cxs) - min(cxs) + 1) * cell_px; Hh = (max(cys) - min(cys) + 1) * cell_px
-img = np.zeros((Hh, W, 3), np.uint8)
+# layer codes: 0 none, 1 floor (unreachable), 2 walkable, 3 wall, 4 load zone, 5 Stalhound, 6 Guay, 7 door
+lay = np.zeros((Hh, W), np.uint8)
 for r, c in chunk_of_room.items():
     cov = covs[r]; H, reach = cov['H'], cov['reach']
-    tile = np.zeros(H.shape + (3,), np.uint8)
-    tile[~np.isnan(H)] = (80, 80, 80); tile[reach] = (70, 150, 80); tile[cov['wall_grid']] = (30, 30, 30)
-    for a in rooms[r]['actr']:
-        if a[0].startswith(b'E_'):
-            rc = cov['cell'](a[2], a[4]); col = (200, 40, 200) if a[0].startswith(b'E_sh') else (60, 120, 230)
-            tile[max(0, rc[0] - 4):rc[0] + 5, max(0, rc[1] - 4):rc[1] + 5] = col
+    tile = np.zeros(H.shape, np.uint8)
+    tile[~np.isnan(H)] = 1; tile[reach] = 2; tile[cov['wall_grid']] = 3
     for t_ in rooms[r]['tgsc']:
-        rc = cov['cell'](t_[2], t_[4]); tile[max(0, rc[0] - 6):rc[0] + 7, max(0, rc[1] - 6):rc[1] + 7] = (240, 200, 40)
+        if t_[0].rstrip(b'\0') != b'scnChg' or (t_[1] & 0xFF) in door_exits_of.get(r, ()):
+            continue
+        rc = cov['cell'](t_[2], t_[4]); tile[max(0, rc[0] - 6):rc[0] + 7, max(0, rc[1] - 6):rc[1] + 7] = 4
+    for a in rooms[r]['actr']:
+        if a[0].startswith(b'E_') or a[0].rstrip(b'\0') == b'kdoor':
+            code = 7 if a[0].startswith(b'kdoor') else (5 if a[0].startswith(b'E_sh') else 6)
+            rad = 7 if code == 7 else 5
+            rc = cov['cell'](a[2], a[4]); tile[max(0, rc[0] - rad):rc[0] + rad + 1, max(0, rc[1] - rad):rc[1] + rad + 1] = code
     tile = tile[:cell_px, :cell_px][::-1, ::-1]   # north up, SH x grid increases leftwards in exporter space
     gx = (max(cxs) - c[0]) * cell_px; gy = (max(cys) - c[1]) * cell_px
-    img[gy:gy + tile.shape[0], gx:gx + tile.shape[1]] = tile
-    img[gy:gy + cell_px, gx] = 255; img[gy, gx:gx + cell_px] = 255
+    lay[gy:gy + tile.shape[0], gx:gx + tile.shape[1]] = tile
+np.savez_compressed(P / 'town/town_map_layers.npz', layers=lay, cell_px=cell_px, step_cm=STEP)
+pal = np.array([(0, 0, 0), (80, 80, 80), (70, 150, 80), (30, 30, 30), (240, 200, 40), (200, 40, 200),
+                (60, 120, 230), (255, 255, 255)], np.uint8)
+img = pal[lay]
+for gx in range(0, W, cell_px): img[:, gx] = 255
+for gy in range(0, Hh, cell_px): img[gy, :] = 255
 Image.fromarray(img).resize((W // 3, Hh // 3), Image.NEAREST).save(P / 'town/town_map.png')
 rep['connected_rooms'] = len(seen); rep['links'] = sum(len(v) for v in graph.values())
 rep['total_reachable_m2'] = sum(v['reachable_m2'] for v in rep['rooms'].values())

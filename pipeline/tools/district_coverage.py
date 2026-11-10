@@ -64,8 +64,10 @@ def analyse(V, F, spawn_xz, bounds=None):
 
     wall_grid = np.zeros(H.shape, bool)
     pts = []
+    # walls that start within 2 m of the typical floor (interiors may sit above street level)
+    ref = float(np.nanmedian(H)) if np.isfinite(H).any() else 0.0
     for t in wall_tris:
-        if t[:, 1].min() >= 200:
+        if t[:, 1].min() >= ref + 200:
             continue
         for a, b in ((0, 1), (1, 2), (2, 0)):
             seg = t[b, [0, 2]] - t[a, [0, 2]]

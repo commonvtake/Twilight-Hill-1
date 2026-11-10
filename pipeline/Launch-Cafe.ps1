@@ -134,8 +134,8 @@ try {
         $modsDir = Join-Path $projectDir 'OldTownMods'
         $modFile = 'SilentHillOldTown.dusk'
         $stageTarget = 'D_SB01,0,0,0'
-        Write-Host 'Silent Hill prototype 0.7.0: Old Silent Hill town - walk across street edges to'
-        Write-Host 'move between areas. Cafe, fog, Stalhounds and Guays. Story not implemented yet.'
+        Write-Host 'Silent Hill prototype 0.8.0: Old Silent Hill town and buildings - walk across street edges,'
+        Write-Host 'press A at doors to enter buildings. Fog, Stalhounds and Guays. Story not implemented yet.'
         Write-Host 'LB/Space jump, RB dodge roll, X sword, B lantern, Y bow, Start > Options = settings.'
         if (-not (Test-Path -LiteralPath (Join-Path $modsDir 'silent_hill_core.dusk'))) {
             Write-Host 'Note: silent_hill_core.dusk is missing from OldTownMods; controls and starter kit are off.' -ForegroundColor Yellow

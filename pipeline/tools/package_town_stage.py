@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT / 'gclib')); sys.path.insert(0, str(TOOLS))
 from gclib.rarc import RARC
 from build_town import chunk_blobs, write_dz, STAGE
 
-VERSION = '0.7.0'
+VERSION = '0.8.0'
 report = json.loads((P / 'town/town_report.json').read_text())
 rooms = [r for r in report['rooms'] if 'skipped' not in r]
 N = max(r['room'] for r in rooms) + 1
@@ -41,6 +41,27 @@ def retarget_scls(dz):
     return bytes(b), changed
 
 
+ST_FIELD = 0
+UB_NO_MAP = 2
+
+
+def patch_stag(dz):
+    """Make a stage a field (battle) stage and disable the map button (no SH map data yet).
+
+    The template STAG came from a Kakariko interior: stage type ST_ROOM, which makes
+    daAlink_c::checkNotBattleStage() true - no sword, no shield/guard, most items unusable."""
+    b = bytearray(dz); n = struct.unpack_from('>I', b, 0)[0]
+    for i in range(n):
+        tag, cnt, off = struct.unpack_from('>4sII', b, 4 + i * 12)
+        if tag == b'STAG':
+            f0a = struct.unpack_from('>H', b, off + 0x0a)[0]
+            f0c = struct.unpack_from('>I', b, off + 0x0c)[0]
+            struct.pack_into('>H', b, off + 0x0a, (f0a & ~7) | UB_NO_MAP)
+            struct.pack_into('>I', b, off + 0x0c, (f0c & ~(7 << 16)) | (ST_FIELD << 16))
+            return bytes(b), (f0c >> 16) & 7
+    raise ValueError('no STAG')
+
+
 files = {}
 # cafe
 cafe_changes = 0
@@ -48,6 +69,8 @@ for arcname, inner in (('R00_00.arc', 'room.dzr'), ('STG_00.arc', 'stage.dzs')):
     key = f'overlay/res/Stage/R_SP108/{arcname}'
     arc = RARC(BytesIO(base[key])); arc.read()
     e = arc.get_file_entry(inner); data, n = retarget_scls(e.data.getvalue()); cafe_changes += n
+    if inner == 'stage.dzs':
+        data, old_type = patch_stag(data)
     e.data = BytesIO(data); arc.save_changes(); files[key] = arc.data.getvalue()
 assert cafe_changes == 2, cafe_changes
 
@@ -60,6 +83,10 @@ order = [struct.unpack_from('>4sII', dzs, 4 + i * 12)[0] for i in range(n0)]
 env_rec = {t: ch[t][1][:0x41] for t in (b'Env0', b'Enve')}
 cafe_exit = ch[b'SCLS'][1][:13]
 assert cafe_exit[:8] == b'R_SP108\0'
+# One global exit table for the stage and every room (see build_oldtown.py).
+room0 = chunk_blobs((P / 'town/chunks/00/room.dzr').read_bytes())
+EXIT_COUNT, exit_table = room0[b'SCLS'][0], room0[b'SCLS'][1][:13 * room0[b'SCLS'][0]]
+assert exit_table[:13] == cafe_exit
 
 
 def rtbl_blob(base_off):
@@ -81,7 +108,7 @@ def build_stage(rtbl_off):
         elif t in env_rec:
             out.append((t, N, env_rec[t] * N))
         elif t == b'SCLS':
-            out.append((t, 1, cafe_exit))
+            out.append((t, EXIT_COUNT, exit_table))
         else:
             out.append((t, cnt, blob))
     return out
@@ -92,6 +119,7 @@ rt = [struct.unpack_from('>4sII', tmp, 4 + i * 12) for i in range(n0)]
 rtbl_off = [o for t, c, o in rt if t == b'RTBL'][0]
 stage_dzs = write_dz(build_stage(rtbl_off))
 assert write_dz(build_stage(rtbl_off)) == stage_dzs
+stage_dzs, template_stage_type = patch_stag(stage_dzs)
 stg.get_file_entry('stage.dzs').data = BytesIO(stage_dzs); stg.save_changes()
 files[f'overlay/res/Stage/{STAGE}/STG_00.arc'] = stg.data.getvalue()
 
@@ -109,9 +137,10 @@ for r in rooms:
 files['mod.json'] = (json.dumps({
     'id': 'local.silent_hill.oldtown', 'name': 'Silent Hill - Old Silent Hill Town',
     'version': VERSION, 'author': 'Personal crossover project',
-    'description': f'Old Silent Hill: {sum(len(r["tiles"]) for r in rooms)} original town tiles in {len(rooms)} connected '
-                   'areas (walk across street edges), native fog, Cafe 5to2, Stalhounds and Guays for Groaners '
-                   'and Air Screamers. Pair with Silent Hill Core. No story progression yet. Windows playtest required.'},
+    'description': f'Old Silent Hill: {sum(len(r["tiles"]) for r in rooms)} original map tiles in {len(rooms)} connected '
+                   'areas - streets plus building interiors behind working doors - native fog, Cafe 5to2, '
+                   'Stalhounds and Guays for Groaners and Air Screamers. Pair with Silent Hill Core. '
+                   'No story progression yet. Windows playtest required.'},
     indent=2) + '\n').encode()
 out = P / 'OldTownMods'; out.mkdir(exist_ok=True)
 with zipfile.ZipFile(out / 'SilentHillOldTown.dusk', 'w', zipfile.ZIP_DEFLATED) as z:
@@ -122,7 +151,8 @@ if core.exists():
     shutil.copy2(core, out / 'silent_hill_core.dusk')
 pkg = {'version': VERSION, 'stage': STAGE, 'rooms': len(rooms), 'room_slots_used': N,
        'largest_room_archive_bytes': max(sizes.values()), 'room_archive_bytes': sizes,
-       'cafe_exits_retargeted': cafe_changes, 'dusk_bytes': (out / 'SilentHillOldTown.dusk').stat().st_size,
+       'cafe_exits_retargeted': cafe_changes, 'exit_table_entries': EXIT_COUNT,
+       'stage_type': 'ST_FIELD (template was %d = ST_ROOM)' % template_stage_type, 'map_button': 'disabled', 'dusk_bytes': (out / 'SilentHillOldTown.dusk').stat().st_size,
        'silent_hill_core_included': core.exists(), 'runtime_tested': False,
        'files': {n: hashlib.sha256(b).hexdigest() for n, b in files.items()}}
 (P / 'town/package_report.json').write_text(json.dumps(pkg, indent=1) + '\n')
